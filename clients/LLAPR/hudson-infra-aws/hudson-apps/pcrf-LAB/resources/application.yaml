@@ -40,7 +40,7 @@ spec:
     spec:
       serviceAccountName: hudson-sa
       containers:
-        - image: us-central1-docker.pkg.dev/sherlock-004/hudson/pcrf-lab:latest
+        - image: us-central1-docker.pkg.dev/sherlock-003/shushdeployment-lla/pcrf-lab:latest
           name: pcrf-lab
           imagePullPolicy: Always
           ports:

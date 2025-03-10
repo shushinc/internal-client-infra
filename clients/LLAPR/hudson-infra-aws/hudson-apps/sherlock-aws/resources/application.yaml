@@ -28,7 +28,7 @@ spec:
       serviceAccountName: hudson-sa
       containers:
         - name: sherlock
-          image: us-central1-docker.pkg.dev/sherlock-004/hudson/sherlockapi:latest
+          image: us-central1-docker.pkg.dev/sherlock-003/shushdeployment-lla/sherlockapi:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8081
