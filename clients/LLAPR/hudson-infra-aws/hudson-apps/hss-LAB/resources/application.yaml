@@ -40,7 +40,7 @@ spec:
     spec:
       serviceAccountName: hudson-sa
       containers:
-        - image: us-central1-docker.pkg.dev/sherlock-004/hudson/hss-lab:latest
+        - image: us-central1-docker.pkg.dev/sherlock-003/shushdeployment-lla/hss-lab:latest
           name: hss-lab
           imagePullPolicy: Always
           ports:
