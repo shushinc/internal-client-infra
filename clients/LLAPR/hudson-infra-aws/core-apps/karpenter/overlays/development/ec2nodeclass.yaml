@@ -1,0 +1,17 @@
+---
+- op: add
+  path: /spec/subnetSelectorTerms
+  value:
+    - tags:
+        karpenter.sh/discovery: eks-hudson
+
+- op: add
+  path: /spec/securityGroupSelectorTerms
+  value:
+    - tags:
+        karpenter.sh/discovery: eks-hudson
+
+- op: replace
+  path: /spec/tags/karpenter.sh~1discovery
+  value: eks-hudson
+

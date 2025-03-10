@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sherlock
+spec:
+  template:
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - cts-den1-shapi2
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sherlock-service
+spec:
+  type: NodePort
+  ports:
+    - port: 8081
+      targetPort: 8081
+      protocol: TCP
+      name: http
+      nodePort: 30416
+  selector:
+    app: sherlock

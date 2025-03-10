@@ -1,0 +1,6 @@
+---
+- op: replace
+  path: /spec/template/spec/containers/0/args
+  value:
+    - "--cluster-name=eks-hudson"
+    - "--ingress-class=alb"
