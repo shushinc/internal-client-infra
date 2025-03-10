@@ -80,13 +80,11 @@ variable "branch" {
 variable "vpc_id" {
   description = "vpc_id"
   type        = string
-  default     = "vpc-015c3a108feec7db9"
 }
 
 variable "public_subnets" {
   description = "public_subnets"
-  type        = list
-  default     = ["subnet-0c45f007fddcb37ee", "subnet-0eaf537e2fb3ec722", "subnet-095ed8b5041270255"]
+  type        = list(string)
 }
 
 variable "public_subnet" {
