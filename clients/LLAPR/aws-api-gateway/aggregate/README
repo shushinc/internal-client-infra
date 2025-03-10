@@ -1,0 +1,7 @@
+Install Dependency:
+    pip install -r requirements.txt
+
+Update the IP Address in the portal_api_config.cfg
+
+Run the Script:
+    python3 aggregate.py

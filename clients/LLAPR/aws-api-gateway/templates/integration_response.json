@@ -1,0 +1,21 @@
+{
+    "type": "HTTP",
+    "httpMethod": "POST",
+    "uri": "http://k8s-hudson-sherlock-8351d45826-132954164.us-east-1.elb.amazonaws.com/account-status/v0/retrieve-account-type",
+    "connectionType": "INTERNET",
+    "requestTemplates": {
+        "application/json": null
+    },
+    "passthroughBehavior": "WHEN_NO_MATCH",
+    "timeoutInMillis": 29000,
+    "cacheNamespace": "kmb4u1",
+    "cacheKeyParameters": [],
+    "integrationResponses": {
+        "200": {
+            "statusCode": "200",
+            "responseTemplates": {
+                "application/json": null
+            }
+        }
+    }
+}

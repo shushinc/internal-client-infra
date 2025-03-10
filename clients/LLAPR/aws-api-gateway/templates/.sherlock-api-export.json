@@ -1,0 +1,5358 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Sherlock API",
+    "description" : "This is the first version of Shush Sherlock API Platform",
+    "version" : "0.0.2"
+  },
+  "servers" : [ {
+    "url" : "https://ytvk2goyre.execute-api.us-east-1.amazonaws.com/{basePath}",
+    "variables" : {
+      "basePath" : {
+        "default" : "dev"
+      }
+    }
+  } ],
+  "paths" : {
+    "/sim-swap/v0/check" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/sim-swap/v0/check",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "sim_swap_date_GSMA_sim_swap_v0_check_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CheckSimSwapRequestGSMA"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CheckSimSwapResponseAgeGSMA"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "409" : {
+            "description" : "409 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/device-sim-status/v0/retrieve-imei" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/device-sim-status/v0/retrieve-imei",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "device_sim_status_retrieve_imei_device_sim_status_v0_retrieve_imei_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DeviceSimStatusIMEILookupResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "502 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "405 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "406 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "429 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/account-status-change/v0/retrieve-last-billing-address-change-date" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/account-status-change/v0/retrieve-last-billing-address-change-date",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "account_status_change_retrieve_last_billing_address_change_date_account_status_change_v0_retrieve_last_billing_address_change_date_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountStatusChangeLastBillingAddressChangeDateResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/sim-swap/v0/retrieve-date" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/sim-swap/v0/retrieve-date",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "sim_swap_date_GSMA_sim_swap_v0_retrieve_date_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CheckSimSwapRequestGSMA"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CheckSimSwapResponseGSMA"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "409" : {
+            "description" : "409 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/in-call-state/v0/retrieve-active-inbound" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/sim-swap/v0/check",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "in_call_state_retrieve_active_inbound_in_call_state_v0_retrieve_active_inbound_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/InCallStateInboundCallResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/account-status/v0/retrieve-service-activation-date" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/account-status/v0/retrieve-service-activation-date",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "account_status_retrieve_service_activation_date_account_status_v0_retrieve_service_activation_date_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountStatusRetrieveServiceActivationDateResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/imsi_change_date_check" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/imsi_change_date_check",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "device_sim_status_check_sim_swap_lab_imsi_change_date_check_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CheckSimSwapRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CheckSimSwapResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "409" : {
+            "description" : "409 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/device-sim-status/v0/check-sim-swap" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/device-sim-status/v0/check-sim-swap",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "device_sim_status_check_sim_swap_device_sim_status_v0_check_sim_swap_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CheckSimSwapRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CheckSimSwapResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "409" : {
+            "description" : "409 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/routing-status/v0/retrieve-call-forwarding" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/routing-status/v0/retrieve-call-forwarding",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "routing_status_retrieve_call_forwarding_routing_status_v0_retrieve_call_forwarding_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RoutingStatusCallForwardingIndicatorResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "501 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "415 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "429 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "409" : {
+            "description" : "409 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/device-sim-status/v0/retrieve-bundle" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/device-sim-status/v0/retrieve-bundle",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "device_sim_status_retrieve_bundle_device_sim_status_v0_retrieve_bundle_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DeviceSimStatusResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/account-status/v0/retrieve-account-type" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/account-status/v0/retrieve-account-type",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "account_status_retrieve_account_type_account_status_v0_retrieve_account_type_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountStatusRetrieveAccountTypeResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/device-sim-status/v0/retrieve-imei-change-date" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/device-sim-status/v0/retrieve-imei-change-date",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "device_sim_status_retrieve_imei_change_date_device_sim_status_v0_retrieve_imei_change_date_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DeviceSimStatusIMEIChangeDateResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/account-status/v0/retrieve-bundle" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/account-status/v0/retrieve-bundle",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "account_status_retrieve_bundle_account_status_v0_retrieve_bundle_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountStatusRetrieveResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/customer-verification/v0/verify-email-address" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/customer-verification/v0/verify-email-address",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "number_verification_verify_email_address_customer_verification_v0_verify_email_address_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CustomerVerificationEmailAddressRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CustomerVerificationEmailResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/device-sim-status/v0/retrieve-imsi-activation-date" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/device-sim-status/v0/retrieve-imsi-activation-date",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "device_sim_status_retrieve_imsi_activation_date_device_sim_status_v0_retrieve_imsi_activation_date_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DeviceSimStatusIMSIActivationDateResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/device-location/v0/verify-device-location" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/device-location/v0/verify-device-location",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "device_location_verify_device_location_v0_verify_device_location_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/GeofencingVerifyRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/GeofencingResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/imsi_change_date" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/imsi_change_date",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "device_sim_status_retrieve_imsi_change_date_lab_imsi_change_date_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DeviceSimStatusIMSIChangeDateResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "409" : {
+            "description" : "409 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/email_verify" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/email_verify",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "number_verification_verify_email_address_email_verify_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CustomerVerificationEmailAddressRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CustomerVerificationEmailResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/device-sim-status/v0/retrieve-imei-activation-date" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/device-sim-status/v0/retrieve-imei-activation-date",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "device_sim_status_retrieve_imei_activation_date_device_sim_status_v0_retrieve_imei_activation_date_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DeviceSimStatusIMEIActivationDateResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/number-verification/v0/verify-number" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/number-verification/v0/verify-number",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "number_verification_verify_number_number_verification_v0_verify_number_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/NumberVerificationResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/billing_address_verify" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/billing_address_verify",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "number_verification_verify_billing_address_lab_billing_address_verify_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CustomerVerificationBillingAddressRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CustomerVerificationBillingAddressResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/customer-verification/v0/verify-bundle" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/customer-verification/v0/verify-bundle",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "number_verification_verify_bundle_customer_verification_v0_verify_bundle_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CustomerVerificationBundleRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CustomerVerificationBundleResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/account-status/v0/retrieve-subscriber-account-status" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/account-status/v0/retrieve-subscriber-account-status",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "account_status_retrieve_subscriber_account_status_account_status_v0_retrieve_subscriber_account_status_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountStatusRetrieveSubscriberAccountStatusResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/device-sim-status/v0/retrieve-imsi-change-date" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/device-sim-status/v0/retrieve-imsi-change-date",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "device_sim_status_retrieve_imsi_change_date_device_sim_status_v0_retrieve_imsi_change_date_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DeviceSimStatusIMSIChangeDateResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "409" : {
+            "description" : "409 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/silent-authentication/v0/retrieve-ip-address" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/silent-authentication/v0/retrieve-ip-address",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "silent_authentication_retrieve_ip_address_silent_authentication_v0_retrieve_ip_address_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SilentAuthenticationRetrieveIPAddressResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/routing-status/v0/retrieve-bundle" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/routing-status/v0/retrieve-bundle",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "routing_status_retrieve_bundle_routing_status_v0_retrieve_bundle_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RoutingStatusResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/device-location/v0/retrieve-device-location" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/device-location/v0/retrieve-device-location",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "device_location_retrieve_device_location_device_location_v0_retrieve_device_location_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DeviceLocationResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/count-status-change/v0/retrieve-msisdn-porting-status" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/count-status-change/v0/retrieve-msisdn-porting-status",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "account_status_change_retrieve_msisdn_porting_status_count_status_change_v0_retrieve_msisdn_porting_status_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountStatusChangeMSISDNPortingStatusResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/account-status-change/v0/retrieve-subscription-status-change-date" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/account-status-change/v0/retrieve-subscription-status-change-date",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "account_status_change_retrieve_subscription_status_change_date_account_status_change_v0_retrieve_subscription_status_change_date_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountStatusChangeSubscriptionStatusChangeDateResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/age_verify" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/age_verify",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "number_verification_verify_age_age_verify_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CustomerVerificationAgeRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CustomerVerificationAgeResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/customer-verification/v0/verify-name" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/customer-verification/v0/verify-name",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "number_verification_verify_name_customer_verification_v0_verify_name_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CustomerVerificationNameRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CustomerVerificationNameResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/number_verify" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/number_verify",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "number_verification_verify_number_lab_number_verify_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/NumberVerificationResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/in-call-state/v0/retrieve-bundle" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/in-call-state/v0/retrieve-bundle",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "in_call_state_retrieve_bundle_in_call_state_v0_retrieve_bundle_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/InCallStateResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/customer-verification/v0/verify-age" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/customer-verification/v0/verify-age",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "number_verification_verify_age_customer_verification_v0_verify_age_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CustomerVerificationAgeRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CustomerVerificationAgeResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/device-status/v0/roaming" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/device-status/v0/roaming",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "routing_status_retrieve_roaming_status_GSMA_device_status_v0_roaming_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/DeviceRoamingStatusRequestInput"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DeviceRoamingStatusRequestOutput"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/device-status/v0/connectivity" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/device-status/v0/connectivity",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "routing_status_retrieve_roaming_status_GSMA_device_status_v0_connectivity_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/DeviceRoamingStatusRequestInput"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DeviceRoamingStatusRequestOutput"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/account-status-change/v0/retrieve-last-primary-name-change-date" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/account-status-change/v0/retrieve-last-primary-name-change-date",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "account_status_change_retrieve_last_primary_name_change_date_account_status_change_v0_retrieve_last_primary_name_change_date_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountStatusChangeLastPrimaryNameChangeDateResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/account-status/v0/retrieve-customer-type" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/account-status/v0/retrieve-customer-type",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        
+        "operationId" : "account_status_retrieve_customer_type_account_status_v0_retrieve_customer_type_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountStatusRetrieveCustomerTypeResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ ]
+        } ]
+      }
+    },
+    "/device-sim-status/v0/retrieve-device-lost-stolen-status" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/device-sim-status/v0/retrieve-device-lost-stolen-status",
+          "httpMethod": "POST",
+          "type": "HTTP",
+          "responses": {
+          "default": {
+            "statusCode": "200",
+            "responseParameters": {},
+            "responseTemplates": {
+              "application/json": ""
+            }
+          }
+      },
+      "requestTemplates": {
+        "application/json": ""
+      },
+      "passthroughBehavior": "WHEN_NO_MATCH"
+        },
+        "x-amazon-apigateway-method-responses": {
+          "200": {
+            "description": "Successful response",
+            "responseModels": {
+              "application/json": "DeviceSimStatusDeviceLostStolenIndicatorResponse"
+            }
+          }
+        },
+        "operationId" : "device_sim_status_retrieve_device_lost_stolen_status_device_sim_status_v0_retrieve_device_lost_stolen_status_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DeviceSimStatusDeviceLostStolenIndicatorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/" : {
+      "get" : {
+        "x-amazon-apigateway-integration": {
+      "uri": "${base_url}",
+      "httpMethod": "GET",
+      "type": "HTTP",
+      "responses": {
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseTemplates": {
+            "application/json": ""
+          }
+        }
+      },
+      "requestTemplates": {
+        "application/json": ""
+      },
+      "passthroughBehavior": "WHEN_NO_MATCH"
+    },
+        "x-amazon-apigateway-method-responses": {
+          "200": {
+            "description": "Successful response",
+            "responseModels": {
+              "application/json": "ResponseReadRootGet"
+            }
+          }
+        },
+        "operationId" : "read_root__get",
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseReadRootGet"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/silent-authentication/v0/verify-ip-address" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/silent-authentication/v0/verify-ip-address",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "silent_authentication_verify_ip_address_silent_authentication_v0_verify_ip_address_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ZeroTrustSilentAuthenticationVerifyIPAddressRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ZeroTrustSilentAuthenticationVerifyIPAddressResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/device-sim-status/v0/device-sim-status/v0/retrieve-device-lost-stolen-date" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/device-sim-status/v0/device-sim-status/v0/retrieve-device-lost-stolen-date",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "device_sim_status_retrieve_device_lost_stolen_date_device_sim_status_v0_device_sim_status_v0_retrieve_device_lost_stolen_date_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DeviceSimStatusDeviceLostStolenDateResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/account-status/v0/retrieve-primary-account-holder" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/account-status/v0/retrieve-primary-account-holder",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "account_status_retrieve_primary_account_holder_account_status_v0_retrieve_primary_account_holder_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountStatusRetrievePrimaryAccountHolderResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/account-status-change/v0/retrieve-last-number-change-date" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/account-status-change/v0/retrieve-last-number-change-date",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "account_status_change_retrieve_last_number_change_date_account_status_change_v0_retrieve_last_number_change_date_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountStatusChangeLastMobileNumberChangeDateResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/in-call-state/v0/retrieve-active-outbound" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/in-call-state/v0/retrieve-active-outbound",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "in_call_state_retrieve_active_outbound_in_call_state_v0_retrieve_active_outbound_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/InCallStateOutboundCallResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/routing-status/v0/retrieve-roaming-status" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/routing-status/v0/retrieve-roaming-status",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "routing_status_retrieve_roaming_status_routing_status_v0_retrieve_roaming_status_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RoutingStatusRoamingStatusResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/account-status-change/v0/retrieve-bundle" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/account-status-change/v0/retrieve-bundle",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "account_status_change_retrieve_bundle_account_status_change_v0_retrieve_bundle_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountStatusChangeResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    },
+    "/customer-verification/v0/verify-billing-address" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/customer-verification/v0/verify-billing-address",
+          "httpMethod": "POST",
+          "type": "HTTP"
+        },
+        "operationId" : "number_verification_verify_billing_address_customer_verification_v0_verify_billing_address_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CustomerVerificationBillingAddressRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CustomerVerificationBillingAddressResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "test/write" ]
+        } ]
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      
+      "AccountStatusRetrieveAccountTypeResponse" : {
+        "title" : "AccountStatusRetrieveAccountTypeResponse",
+        "required" : [ "accountType", "carrierName", "identifier", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "accountType" : {
+            "title" : "Accounttype",
+            "type" : "string"
+          }
+        }
+      },
+      "ZeroTrustSilentAuthenticationVerifyIPAddressResponse" : {
+        "title" : "ZeroTrustSilentAuthenticationVerifyIPAddressResponse",
+        "required" : [ "carrierName", "identifier", "match", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "match" : {
+            "title" : "Match",
+            "type" : "boolean"
+          }
+        }
+      },
+      "CustomerVerificationEmailAddressRequestSchema" : {
+        "title" : "CustomerVerificationEmailAddressRequestSchema",
+        "required" : [ "carrierName", "customerName", "emailAddress", "identifier", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "customerName" : {
+            "title" : "Customername",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "emailAddress" : {
+            "title" : "Emailaddress",
+            "type" : "string"
+          }
+        }
+      },
+      "AccountStatusChangeLastPrimaryNameChangeDateResponse" : {
+        "title" : "AccountStatusChangeLastPrimaryNameChangeDateResponse",
+        "required" : [ "carrierName", "identifier", "lastPrimaryNameChangeDate", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "lastPrimaryNameChangeDate" : {
+            "title" : "Lastprimarynamechangedate",
+            "type" : "string"
+          }
+        }
+      },
+      "CheckSimSwapResponse" : {
+        "title" : "CheckSimSwapResponse",
+        "required" : [ "carrierName", "identifier", "msisdn", "swapped" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "swapped" : {
+            "title" : "Swapped",
+            "type" : "boolean"
+          }
+        }
+      },
+      "DeviceSimStatusIMSIChangeDateResponse" : {
+        "title" : "DeviceSimStatusIMSIChangeDateResponse",
+        "required" : [ "carrierName", "identifier", "imsiChangeDate", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "imsiChangeDate" : {
+            "title" : "Imsichangedate",
+            "type" : "string"
+          }
+        }
+      },
+      "CustomerVerificationBundleRequestSchema" : {
+        "title" : "CustomerVerificationBundleRequestSchema",
+        "required" : [ "age", "billingAddress", "carrierName", "customerName", "emailAddress", "firstName", "identifier", "lastName", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "customerName" : {
+            "title" : "Customername",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "firstName" : {
+            "title" : "Firstname",
+            "type" : "string"
+          },
+          "lastName" : {
+            "title" : "Lastname",
+            "type" : "string"
+          },
+          "billingAddress" : {
+            "title" : "Billingaddress",
+            "type" : "string"
+          },
+          "emailAddress" : {
+            "title" : "Emailaddress",
+            "type" : "string"
+          },
+          "age" : {
+            "title" : "Age",
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      },
+      "DeviceSimStatusResponse" : {
+        "title" : "DeviceSimStatusResponse",
+        "required" : [ "carrierName", "identifier", "imei", "imeiActivationDate", "imeiChangeDate", "imsiActivationDate", "msisdn", "stolen" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "imeiActivationDate" : {
+            "title" : "Imeiactivationdate",
+            "type" : "string"
+          },
+          "imeiChangeDate" : {
+            "title" : "Imeichangedate",
+            "type" : "string"
+          },
+          "imei" : {
+            "title" : "Imei",
+            "type" : "string"
+          },
+          "imsiActivationDate" : {
+            "title" : "Imsiactivationdate",
+            "type" : "string"
+          },
+          "stolen" : {
+            "title" : "Stolen",
+            "type" : "boolean"
+          },
+          "stolenDate" : {
+            "title" : "Stolendate",
+            "type" : "string"
+          }
+        }
+      },
+      "ValidationError" : {
+        "title" : "ValidationError",
+        "required" : [ "loc", "msg", "type" ],
+        "type" : "object",
+        "properties" : {
+          "loc" : {
+            "title" : "Location",
+            "type" : "array",
+            "items" : {
+              "anyOf" : [ {
+                "type" : "string"
+              }, {
+                "type" : "integer",
+                "format" : "int32"
+              } ]
+            }
+          },
+          "msg" : {
+            "title" : "Message",
+            "type" : "string"
+          },
+          "type" : {
+            "title" : "Error Type",
+            "type" : "string"
+          }
+        }
+      },
+      "RoutingStatusCallForwardingIndicatorResponse" : {
+        "title" : "RoutingStatusCallForwardingIndicatorResponse",
+        "required" : [ "callForwardingOn", "carrierName", "identifier", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "callForwardingOn" : {
+            "title" : "Callforwardingon",
+            "type" : "boolean"
+          }
+        }
+      },
+      "AccountStatusRetrieveResponse" : {
+        "title" : "AccountStatusRetrieveResponse",
+        "required" : [ "accountType", "active", "carrierName", "customerType", "identifier", "msisdn", "paid", "primaryAccountHolder", "serviceActivationDate" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "customerType" : {
+            "title" : "Customertype",
+            "type" : "string"
+          },
+          "accountType" : {
+            "title" : "Accounttype",
+            "type" : "string"
+          },
+          "primaryAccountHolder" : {
+            "title" : "Primaryaccountholder",
+            "type" : "boolean"
+          },
+          "serviceActivationDate" : {
+            "title" : "Serviceactivationdate",
+            "type" : "string"
+          },
+          "active" : {
+            "title" : "Active",
+            "type" : "boolean"
+          },
+          "paid" : {
+            "title" : "Paid",
+            "type" : "boolean"
+          }
+        }
+      },
+      "DeviceSimStatusDeviceLostStolenIndicatorResponse" : {
+        "title" : "DeviceSimStatusDeviceLostStolenIndicatorResponse",
+        "required" : [ "carrierName", "identifier", "msisdn", "stolen" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "stolen" : {
+            "title" : "Stolen",
+            "type" : "boolean"
+          }
+        }
+      },
+      "CustomerVerificationBundleResponse" : {
+        "title" : "CustomerVerificationBundleResponse",
+        "required" : [ "ageMatchPercentage", "billingAddressMatchPercentage", "carrierName", "emailAddressMatchPercentage", "firstNameMatchPercentage", "identifier", "lastNameMatchPercentage", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "firstNameMatchPercentage" : {
+            "title" : "Firstnamematchpercentage",
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "lastNameMatchPercentage" : {
+            "title" : "Lastnamematchpercentage",
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "billingAddressMatchPercentage" : {
+            "title" : "Billingaddressmatchpercentage",
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "emailAddressMatchPercentage" : {
+            "title" : "Emailaddressmatchpercentage",
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "ageMatchPercentage" : {
+            "title" : "Agematchpercentage",
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      },
+      "CustomerVerificationEmailResponse" : {
+        "title" : "CustomerVerificationEmailResponse",
+        "required" : [ "carrierName", "emailAddressMatchPercentage", "identifier", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "emailAddressMatchPercentage" : {
+            "title" : "Emailaddressmatchpercentage",
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      },
+      "GeofencingResponse" : {
+        "title" : "GeofencingResponse",
+        "required" : [ "MatchRate", "carrierName", "identifier", "lastLocationTime", "verificationResult" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "verificationResult" : {
+            "title" : "Verificationresult",
+            "type" : "string"
+          },
+          "lastLocationTime" : {
+            "title" : "Lastlocationtime",
+            "type" : "string"
+          },
+          "MatchRate" : {
+            "title" : "Matchrate",
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      },
+      "Device" : {
+        "title" : "Device",
+        "type" : "object",
+        "properties" : {
+          "phoneNumber" : {
+            "title" : "Phonenumber",
+            "type" : "string"
+          },
+          "ipAddress" : {
+            "title" : "Ipaddress",
+            "anyOf" : [ {
+              "type" : "string"
+            } ]
+          },
+          "maxAge" : {
+            "title" : "Maxage",
+            "anyOf" : [ {
+              "type" : "integer",
+              "format" : "int32"
+            } ],
+            "default" : "24"
+          },
+          "networkAccessIdentifier" : {
+            "title" : "Networkaccessidentifier",
+            "anyOf" : [ {
+              "type" : "string"
+            } ]
+          },
+          "ipv4Address" : {
+            "anyOf" : [ {
+              "$ref" : "#/components/schemas/Ipv4Address"
+            } ]
+          },
+          "ipv6Address" : {
+            "title" : "Ipv6Address",
+            "anyOf" : [ {
+              "type" : "string"
+            } ]
+          }
+        }
+      },
+      "CheckSimSwapRequest" : {
+        "title" : "CheckSimSwapRequest",
+        "required" : [ "identifier" ],
+        "type" : "object",
+        "properties" : {
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string",
+            "default" : "CarrierX"
+          },
+          "customerName" : {
+            "title" : "Customername",
+            "type" : "string",
+            "default" : "Bank1"
+          },
+          "maxAge" : {
+            "title" : "Maxage",
+            "anyOf" : [ {
+              "type" : "integer",
+              "format" : "int32"
+            } ],
+            "default" : "24"
+          }
+        }
+      },
+      "CustomerVerificationNameResponse" : {
+        "title" : "CustomerVerificationNameResponse",
+        "required" : [ "carrierName", "firstNameMatchPercentage", "identifier", "lastNameMatchPercentage", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "firstNameMatchPercentage" : {
+            "title" : "Firstnamematchpercentage",
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "lastNameMatchPercentage" : {
+            "title" : "Lastnamematchpercentage",
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      },
+      "NumberVerificationResponse" : {
+        "title" : "NumberVerificationResponse",
+        "required" : [ "carrierName", "connectedToCarrier", "identifier", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "connectedToCarrier" : {
+            "title" : "Connectedtocarrier",
+            "type" : "boolean"
+          }
+        }
+      },
+      "CheckSimSwapResponseAgeGSMA" : {
+        "title" : "CheckSimSwapResponseAgeGSMA",
+        "required" : [ "swapped" ],
+        "type" : "object",
+        "properties" : {
+          "swapped" : {
+            "title" : "Swapped",
+            "type" : "boolean"
+          }
+        }
+      },
+      "AccountStatusRetrievePrimaryAccountHolderResponse" : {
+        "title" : "AccountStatusRetrievePrimaryAccountHolderResponse",
+        "required" : [ "carrierName", "identifier", "msisdn", "primaryAccountHolder" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "primaryAccountHolder" : {
+            "title" : "Primaryaccountholder",
+            "type" : "boolean"
+          }
+        }
+      },
+      "CustomerVerificationBillingAddressRequestSchema" : {
+        "title" : "CustomerVerificationBillingAddressRequestSchema",
+        "required" : [ "billingAddress", "carrierName", "customerName", "identifier", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "customerName" : {
+            "title" : "Customername",
+            "type" : "string"
+          },
+          "billingAddress" : {
+            "title" : "Billingaddress",
+            "type" : "string"
+          }
+        }
+      },
+      "CustomerVerificationNameRequestSchema" : {
+        "title" : "CustomerVerificationNameRequestSchema",
+        "required" : [ "carrierName", "customerName", "firstName", "identifier", "lastName", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "customerName" : {
+            "title" : "Customername",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "firstName" : {
+            "title" : "Firstname",
+            "type" : "string"
+          },
+          "lastName" : {
+            "title" : "Lastname",
+            "type" : "string"
+          }
+        }
+      },
+      "MSISDNBasicRequestSchema" : {
+        "title" : "MSISDNBasicRequestSchema",
+        "required" : [ "carrierName", "customerName", "identifier" ],
+        "type" : "object",
+        "properties" : {
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "customerName" : {
+            "title" : "Customername",
+            "type" : "string"
+          }
+        }
+      },
+      "ZeroTrustSilentAuthenticationVerifyIPAddressRequest" : {
+        "title" : "ZeroTrustSilentAuthenticationVerifyIPAddressRequest",
+        "required" : [ "carrierName", "customerName", "identifier", "ipAddress", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "customerName" : {
+            "title" : "Customername",
+            "type" : "string"
+          },
+          "ipAddress" : {
+            "title" : "Ipaddress",
+            "type" : "string"
+          }
+        }
+      },
+      "CheckSimSwapRequestGSMA" : {
+        "title" : "CheckSimSwapRequestGSMA",
+        "type" : "object",
+        "properties" : {
+          "phoneNumber" : {
+            "title" : "Phonenumber",
+            "type" : "string"
+          },
+          "ipAddress" : {
+            "title" : "Ipaddress",
+            "anyOf" : [ {
+              "type" : "string"
+            } ]
+          },
+          "maxAge" : {
+            "title" : "Maxage",
+            "anyOf" : [ {
+              "type" : "integer",
+              "format" : "int32"
+            } ],
+            "default" : "24"
+          },
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string",
+            "default" : "ABC12345"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string",
+            "default" : "CarrierX"
+          },
+          "customerName" : {
+            "title" : "Customername",
+            "type" : "string",
+            "default" : "Bank1"
+          }
+        }
+      },
+      "ResponseReadRootGet" : {
+        "title" : "Response Read Root  Get",
+        "type" : "object"
+      },
+      "Message" : {
+        "title" : "Message",
+        "type" : "object",
+        "properties" : {
+          "message" : {
+            "title" : "Message",
+            "type" : "string"
+          }
+        }
+      },
+      "RoutingStatusResponse" : {
+        "title" : "RoutingStatusResponse",
+        "required" : [ "callForwardingOn", "carrierName", "identifier", "msisdn", "roaming", "roamingType" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "callForwardingOn" : {
+            "title" : "Callforwardingon",
+            "type" : "boolean"
+          },
+          "roaming" : {
+            "title" : "Roaming",
+            "type" : "boolean"
+          },
+          "roamingType" : {
+            "title" : "Roamingtype",
+            "type" : "string"
+          }
+        }
+      },
+      "DeviceSimStatusIMSIActivationDateResponse" : {
+        "title" : "DeviceSimStatusIMSIActivationDateResponse",
+        "required" : [ "carrierName", "identifier", "imsiActivationDate", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "imsiActivationDate" : {
+            "title" : "Imsiactivationdate",
+            "type" : "string"
+          }
+        }
+      },
+      "DeviceSimStatusDeviceLostStolenDateResponse" : {
+        "title" : "DeviceSimStatusDeviceLostStolenDateResponse",
+        "required" : [ "carrierName", "identifier", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "stolenDate" : {
+            "title" : "Stolendate",
+            "type" : "string"
+          }
+        }
+      },
+      "InCallStateOutboundCallResponse" : {
+        "title" : "InCallStateOutboundCallResponse",
+        "required" : [ "activeOutboundCall", "carrierName", "identifier", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "activeOutboundCall" : {
+            "title" : "Activeoutboundcall",
+            "type" : "boolean"
+          }
+        }
+      },
+      "AccountStatusRetrieveSubscriberAccountStatusResponse" : {
+        "title" : "AccountStatusRetrieveSubscriberAccountStatusResponse",
+        "required" : [ "active", "carrierName", "identifier", "msisdn", "paid" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "active" : {
+            "title" : "Active",
+            "type" : "boolean"
+          },
+          "paid" : {
+            "title" : "Paid",
+            "type" : "boolean"
+          }
+        }
+      },
+      "CustomerVerificationAgeRequestSchema" : {
+        "title" : "CustomerVerificationAgeRequestSchema",
+        "required" : [ "age", "carrierName", "customerName", "identifier" ],
+        "type" : "object",
+        "properties" : {
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "customerName" : {
+            "title" : "Customername",
+            "type" : "string"
+          },
+          "age" : {
+            "title" : "Age",
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      },
+      "CheckSimSwapResponseGSMA" : {
+        "title" : "CheckSimSwapResponseGSMA",
+        "required" : [ "carrierName", "identifier", "latestSimChange", "latestSimChangeValue", "phoneNumber" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "phoneNumber" : {
+            "title" : "Phonenumber",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "latestSimChange" : {
+            "title" : "Latestsimchange",
+            "type" : "string"
+          },
+          "latestSimChangeValue" : {
+            "title" : "Latestsimchangevalue",
+            "type" : "string"
+          }
+        }
+      },
+      "CustomerVerificationAgeResponse" : {
+        "title" : "CustomerVerificationAgeResponse",
+        "required" : [ "ageMatchPercentage", "carrierName", "identifier", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "ageMatchPercentage" : {
+            "title" : "Agematchpercentage",
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      },
+      "InCallStateInboundCallResponse" : {
+        "title" : "InCallStateInboundCallResponse",
+        "required" : [ "activeInboundCall", "carrierName", "identifier", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "activeInboundCall" : {
+            "title" : "Activeinboundcall",
+            "type" : "boolean"
+          }
+        }
+      },
+      "AccountStatusChangeLastMobileNumberChangeDateResponse" : {
+        "title" : "AccountStatusChangeLastMobileNumberChangeDateResponse",
+        "required" : [ "carrierName", "identifier", "lastMobileNumberChangeDate", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "lastMobileNumberChangeDate" : {
+            "title" : "Lastmobilenumberchangedate",
+            "type" : "string"
+          }
+        }
+      },
+      "DeviceRoamingStatusRequestOutput" : {
+        "title" : "DeviceRoamingStatusRequest",
+        "required" : [ "device" ],
+        "type" : "object",
+        "properties" : {
+          "device" : {
+            "$ref" : "#/components/schemas/Device"
+          },
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string",
+            "default" : "ABC12345"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string",
+            "default" : "CarrierX"
+          },
+          "customerName" : {
+            "title" : "Customername",
+            "type" : "string",
+            "default" : "Bank1"
+          }
+        }
+      },
+      "AccountStatusChangeResponse" : {
+        "title" : "AccountStatusChangeResponse",
+        "required" : [ "carrierName", "identifier", "lastBillingAddressChangeDate", "lastMobileNumberChangeDate", "lastPrimaryNameChangeDate", "msisdn", "msisdnPorted", "subscriptionStatusChangeDate" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "lastMobileNumberChangeDate" : {
+            "title" : "Lastmobilenumberchangedate",
+            "type" : "string"
+          },
+          "subscriptionStatusChangeDate" : {
+            "title" : "Subscriptionstatuschangedate",
+            "type" : "string"
+          },
+          "lastPrimaryNameChangeDate" : {
+            "title" : "Lastprimarynamechangedate",
+            "type" : "string"
+          },
+          "lastBillingAddressChangeDate" : {
+            "title" : "Lastbillingaddresschangedate",
+            "type" : "string"
+          },
+          "msisdnPorted" : {
+            "title" : "Msisdnported",
+            "type" : "boolean"
+          }
+        }
+      },
+      "AccountStatusChangeSubscriptionStatusChangeDateResponse" : {
+        "title" : "AccountStatusChangeSubscriptionStatusChangeDateResponse",
+        "required" : [ "carrierName", "identifier", "msisdn", "subscriptionStatusChangeDate" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "subscriptionStatusChangeDate" : {
+            "title" : "Subscriptionstatuschangedate",
+            "type" : "string"
+          }
+        }
+      },
+      "DeviceSimStatusIMEIActivationDateResponse" : {
+        "title" : "DeviceSimStatusIMEIActivationDateResponse",
+        "required" : [ "carrierName", "identifier", "imeiActivationDate", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "imeiActivationDate" : {
+            "title" : "Imeiactivationdate",
+            "type" : "string"
+          }
+        }
+      },
+      "Ipv4Address" : {
+        "title" : "Ipv4Address",
+        "type" : "object",
+        "properties" : {
+          "phoneNumber" : {
+            "title" : "Phonenumber",
+            "type" : "string"
+          },
+          "ipAddress" : {
+            "title" : "Ipaddress",
+            "anyOf" : [ {
+              "type" : "string"
+            } ]
+          },
+          "maxAge" : {
+            "title" : "Maxage",
+            "anyOf" : [ {
+              "type" : "integer",
+              "format" : "int32"
+            } ],
+            "default" : "24"
+          },
+          "publicAddress" : {
+            "title" : "Publicaddress",
+            "type" : "string"
+          },
+          "privateAddress" : {
+            "title" : "Privateaddress",
+            "type" : "string"
+          },
+          "publicPort" : {
+            "title" : "Publicport",
+            "anyOf" : [ {
+              "type" : "integer",
+              "format" : "int32"
+            } ]
+          }
+        }
+      },
+      "AccountStatusRetrieveCustomerTypeResponse" : {
+        "title" : "AccountStatusRetrieveCustomerTypeResponse",
+        "required" : [ "carrierName", "customerType", "identifier", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "customerType" : {
+            "title" : "Customertype",
+            "type" : "string"
+          }
+        }
+      },
+      "RoutingStatusRoamingStatusResponse" : {
+        "title" : "RoutingStatusRoamingStatusResponse",
+        "required" : [ "carrierName", "identifier", "msisdn", "roaming", "roamingType" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "roaming" : {
+            "title" : "Roaming",
+            "type" : "boolean"
+          },
+          "roamingType" : {
+            "title" : "Roamingtype",
+            "type" : "string"
+          }
+        }
+      },
+      "DeviceSimStatusIMEILookupResponse" : {
+        "title" : "DeviceSimStatusIMEILookupResponse",
+        "required" : [ "carrierName", "identifier", "imei", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "imei" : {
+            "title" : "Imei",
+            "type" : "string"
+          }
+        }
+      },
+      "DeviceLocationResponse" : {
+        "title" : "DeviceLocationResponse",
+        "required" : [ "carrierName", "identifier", "latitude", "longitude", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "latitude" : {
+            "title" : "Latitude",
+            "type" : "number"
+          },
+          "longitude" : {
+            "title" : "Longitude",
+            "type" : "number"
+          }
+        }
+      },
+      "DeviceRoamingStatusRequestInput" : {
+        "title" : "DeviceRoamingStatusRequest",
+        "required" : [ "device" ],
+        "type" : "object",
+        "properties" : {
+          "device" : {
+            "$ref" : "#/components/schemas/Device"
+          },
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string",
+            "default" : "ABC12345"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string",
+            "default" : "CarrierX"
+          },
+          "customerName" : {
+            "title" : "Customername",
+            "type" : "string",
+            "default" : "Bank1"
+          }
+        }
+      },
+      "CustomerVerificationBillingAddressResponse" : {
+        "title" : "CustomerVerificationBillingAddressResponse",
+        "required" : [ "billingAddressMatchPercentage", "carrierName", "identifier", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "billingAddressMatchPercentage" : {
+            "title" : "Billingaddressmatchpercentage",
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      },
+      "SilentAuthenticationRetrieveIPAddressResponse" : {
+        "title" : "SilentAuthenticationRetrieveIPAddressResponse",
+        "required" : [ "carrierName", "identifier", "ipAddress", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "ipAddress" : {
+            "title" : "Ipaddress",
+            "type" : "string"
+          }
+        }
+      },
+      "DeviceSimStatusIMEIChangeDateResponse" : {
+        "title" : "DeviceSimStatusIMEIChangeDateResponse",
+        "required" : [ "carrierName", "identifier", "imeiChangeDate", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "imeiChangeDate" : {
+            "title" : "Imeichangedate",
+            "type" : "string"
+          }
+        }
+      },
+      "GeofencingVerifyRequest" : {
+        "title" : "GeofencingVerifyRequest",
+        "required" : [ "areaType", "carrierName", "customerName", "identifier", "latitude", "longitude", "radius" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "ipAddress" : {
+            "title" : "Ipaddress",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "customerName" : {
+            "title" : "Customername",
+            "type" : "string"
+          },
+          "areaType" : {
+            "title" : "Areatype",
+            "type" : "string"
+          },
+          "latitude" : {
+            "title" : "Latitude",
+            "type" : "number"
+          },
+          "longitude" : {
+            "title" : "Longitude",
+            "type" : "number"
+          },
+          "radius" : {
+            "title" : "Radius",
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      },
+      "InCallStateResponse" : {
+        "title" : "InCallStateResponse",
+        "required" : [ "activeInboundCall", "activeOutboundCall", "carrierName", "identifier", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "activeInboundCall" : {
+            "title" : "Activeinboundcall",
+            "type" : "boolean"
+          },
+          "activeOutboundCall" : {
+            "title" : "Activeoutboundcall",
+            "type" : "boolean"
+          }
+        }
+      },
+      "HTTPValidationError" : {
+        "title" : "HTTPValidationError",
+        "type" : "object",
+        "properties" : {
+          "detail" : {
+            "title" : "Detail",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "AccountStatusChangeLastBillingAddressChangeDateResponse" : {
+        "title" : "AccountStatusChangeLastBillingAddressChangeDateResponse",
+        "required" : [ "carrierName", "identifier", "lastBillingAddressChangeDate", "msisdn" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "lastBillingAddressChangeDate" : {
+            "title" : "Lastbillingaddresschangedate",
+            "type" : "string"
+          }
+        }
+      },
+      "AccountStatusChangeMSISDNPortingStatusResponse" : {
+        "title" : "AccountStatusChangeMSISDNPortingStatusResponse",
+        "required" : [ "carrierName", "identifier", "msisdn", "msisdnPorted" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "msisdnPorted" : {
+            "title" : "Msisdnported",
+            "type" : "boolean"
+          }
+        }
+      },
+      "AccountStatusRetrieveServiceActivationDateResponse" : {
+        "title" : "AccountStatusRetrieveServiceActivationDateResponse",
+        "required" : [ "carrierName", "identifier", "msisdn", "serviceActivationDate" ],
+        "type" : "object",
+        "properties" : {
+          "identifier" : {
+            "title" : "Identifier",
+            "type" : "string"
+          },
+          "msisdn" : {
+            "title" : "Msisdn",
+            "type" : "string"
+          },
+          "carrierName" : {
+            "title" : "Carriername",
+            "type" : "string"
+          },
+          "serviceActivationDate" : {
+            "title" : "Serviceactivationdate",
+            "type" : "string"
+          }
+        }
+      }
+    },
+   "securitySchemes": {
+    "SherlockAuthorizer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "x-amazon-apigateway-authtype": "cognito_user_pools",
+      "x-amazon-apigateway-authorizer": {
+        "type": "cognito_user_pools",
+        "providerARNs": [
+            "${cognito_user_pool_arn}"
+        ]
+      }
+    }
+   }
+  }
+}

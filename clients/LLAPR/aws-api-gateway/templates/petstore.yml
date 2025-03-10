@@ -1,0 +1,301 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API Gateway Secure Pet Store",
+    "description": "Pet store sample that uses Cognito Developer Authenticated Identities to generate credentials through a Java Lambda Function",
+    "version": "1.0.0"
+  },
+  "host": "execute-api.us-east-1.amazonaws.com",
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/",
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/users": {
+      "post": {
+        "summary": "Registers a new user",
+        "description": "Creates a new user in the DynamoDB backend database and returns a set\nof temporary credentials to sign future requests.\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "NewUser",
+            "in": "body",
+            "description": "New user details.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "tags": [
+          "Auth"
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "aws",
+          "httpMethod": "POST",
+          "requestTemplates": {
+            "application/json": "{\n  \"action\" : \"com.amazonaws.apigatewaydemo.action.RegisterDemoAction\",\n  \"body\" : $input.json('$')\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            },
+            "BAD.*": {
+              "statusCode": "400",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            },
+            "INT.*": {
+              "statusCode": "500",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The username of the new user and set of temporary credentials",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/RegisterUserResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "options": {
+        "summary": "CORS support",
+        "description": "Enable CORS by returning correct headers\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "CORS"
+        ],
+        "x-amazon-apigateway-integration": {
+          "type": "mock",
+          "requestTemplates": {
+            "application/json": "{\n  \"statusCode\" : 200\n}\n"
+          },
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              },
+              "responseTemplates": {
+                "application/json": "{}\n"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default response for CORS method",
+            "headers": {
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "A unique username for the user"
+        },
+        "password": {
+          "type": "string",
+          "description": "A password for the new user"
+        }
+      }
+    },
+    "RegisterUserResponse": {
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "The username of the new user"
+        },
+        "identityId": {
+          "type": "string",
+          "description": "The unique identifier for the new user"
+        },
+        "token": {
+          "type": "string",
+          "description": "An OpenID token for the new user"
+        },
+        "credentials": {
+          "type": "object",
+          "properties": {
+            "accessKey": {
+              "type": "string",
+              "description": "Temporary access key to sign requests"
+            },
+            "secretKey": {
+              "type": "string",
+              "description": "Temporary secret access key to sign requests"
+            },
+            "sessionToken": {
+              "type": "string",
+              "description": "Tempoarary session token"
+            },
+            "expiration": {
+              "type": "integer",
+              "description": "Expiration date of the temporary credentials in millis since 1/1/1970\n"
+            }
+          }
+        }
+      }
+    },
+    "LoginUserResponse": {
+      "properties": {
+        "identityId": {
+          "type": "string",
+          "description": "The unique identifier for the new user"
+        },
+        "token": {
+          "type": "string",
+          "description": "An OpenID token for the new user"
+        },
+        "credentials": {
+          "type": "object",
+          "properties": {
+            "accessKey": {
+              "type": "string",
+              "description": "Temporary access key to sign requests"
+            },
+            "secretKey": {
+              "type": "string",
+              "description": "Temporary secret access key to sign requests"
+            },
+            "sessionToken": {
+              "type": "string",
+              "description": "Tempoarary session token"
+            },
+            "expiration": {
+              "type": "integer",
+              "description": "Expiration date of the temporary credentials in millis since 1/1/1970\n"
+            }
+          }
+        }
+      }
+    },
+    "NewPet": {
+      "properties": {
+        "petType": {
+          "type": "string",
+          "description": "Free text pet type"
+        },
+        "petName": {
+          "type": "string",
+          "description": "Free text pet name"
+        },
+        "petAge": {
+          "type": "integer",
+          "description": "Age of the new pet"
+        }
+      }
+    },
+    "NewPetResponse": {
+      "properties": {
+        "petId": {
+          "type": "string",
+          "description": "The generated unique identifier for the new pet"
+        }
+      }
+    },
+    "Pet": {
+      "properties": {
+        "petId": {
+          "type": "string",
+          "description": "The generated unique identifier for the new pet"
+        },
+        "petType": {
+          "type": "string",
+          "description": "Free text pet type"
+        },
+        "petName": {
+          "type": "string",
+          "description": "Free text pet name"
+        },
+        "petAge": {
+          "type": "integer",
+          "description": "Age of the new pet"
+        }
+      }
+    },
+    "Pets": {
+      "type": "array",
+      "items": {
+        "$ref": "Pet"
+      }
+    },
+    "Error": {
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
