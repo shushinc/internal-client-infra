@@ -9,7 +9,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket       = "moriarty-state-portal"
+    bucket       = "prod-llapr-terraform-state"
     key          = "moriarty/terraform.tfstate"
     region       = "us-east-1" # Ensure this matches the bucket and table region
     use_lockfile = true

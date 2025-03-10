@@ -9,7 +9,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket       = "awsapigateway-state-shush"
+    bucket       = "prod-llapr-terraform-state"
     key          = "apigateway/terraform.tfstate"
     region       = "us-east-1" # Ensure this matches the bucket and table region
     use_lockfile = true
