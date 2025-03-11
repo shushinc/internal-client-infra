@@ -59,6 +59,11 @@ resource "aws_cognito_user_pool" "sherlock_userpool" {
   tags = {
     Environment = var.environment
   }
+  
+    lifecycle {
+    ignore_changes = [schema]
+  }
+
 }
 
 
