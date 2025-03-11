@@ -1,7 +1,7 @@
 aws_region        = "us-east-1"
 api_name          = "Shush-SherlockAPI"
 exported_api_file = "./templates/sherlock-api-export.json"
-stage_name        = "prod"
+stage_name        = "v1"
 cognito_userpoolname = "sherlock-userpool"
 sherlock_api_oauth_domain = "llapr-api"
 sherlock_api_client = "llapr-client"
