@@ -357,13 +357,13 @@
                     "application/json" : ""
                 }
               },
-              "4\\d{2}" : {
-                  "statusCode" : "400",
-                  "description" : "400 response",
-                  "responseTemplates" : {
-                      "application/json" : ""
-                  }
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
+              }
           }
         },
         "operationId" : "account_status_change_retrieve_last_billing_address_change_date_account_status_change_v0_retrieve_last_billing_address_change_date_post",
@@ -635,13 +635,13 @@
                     "application/json" : ""
                 }
               },
-              "4\\d{2}" : {
-                    "statusCode" : "400",
-                    "description" : "400 response",
-                    "responseTemplates" : {
-                        "application/json" : ""
-                  }
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
+              }
           }
         },
         "operationId" : "account_status_retrieve_service_activation_date_account_status_v0_retrieve_service_activation_date_post",
@@ -1205,21 +1205,21 @@
             "application/json": ""
           },
           "responses" : {
-          "2\\d{2}" : {
-              "statusCode" : "200",
-              "description" : "200 response",
-              "responseTemplates" : {
-                  "application/json" : ""
-              }
-            },
+            "2\\d{2}" : {
+                "statusCode" : "200",
+                "description" : "200 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              },
             "4\\d{2}" : {
-                  "statusCode" : "400",
-                  "description" : "400 response",
-                  "responseTemplates" : {
-                      "application/json" : ""
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
               }
-        }
+          }
         },
         
         "operationId" : "account_status_retrieve_account_type_account_status_v0_retrieve_account_type_post",
@@ -1279,13 +1279,13 @@
                     "application/json" : ""
                 }
               },
-              "4\\d{2}" : {
-                    "statusCode" : "400",
-                    "description" : "400 response",
-                    "responseTemplates" : {
-                        "application/json" : ""
-                  }
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
+              }
           }
         },
         "operationId" : "device_sim_status_retrieve_imei_change_date_device_sim_status_v0_retrieve_imei_change_date_post",
@@ -1547,13 +1547,13 @@
                     "application/json" : ""
                 }
               },
-              "4\\d{2}" : {
-                    "statusCode" : "400",
-                    "description" : "400 response",
-                    "responseTemplates" : {
-                        "application/json" : ""
-                  }
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
+              }
           }
         },
         "operationId" : "device_sim_status_retrieve_imsi_activation_date_device_sim_status_v0_retrieve_imsi_activation_date_post",
@@ -2415,13 +2415,13 @@
                     "application/json" : ""
                 }
               },
-              "4\\d{2}" : {
-                    "statusCode" : "400",
-                    "description" : "400 response",
-                    "responseTemplates" : {
-                        "application/json" : ""
-                  }
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
+              }
           }
         },
         "operationId" : "account_status_retrieve_subscriber_account_status_account_status_v0_retrieve_subscriber_account_status_post",
@@ -3031,13 +3031,13 @@
                     "application/json" : ""
                 }
               },
-              "4\\d{2}" : {
-                    "statusCode" : "400",
-                    "description" : "400 response",
-                    "responseTemplates" : {
-                        "application/json" : ""
-                  }
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
+              }
           }
         },
         "operationId" : "account_status_change_retrieve_subscription_status_change_date_account_status_change_v0_retrieve_subscription_status_change_date_post",
@@ -3809,13 +3809,13 @@
                     "application/json" : ""
                 }
               },
-              "4\\d{2}" : {
-                    "statusCode" : "400",
-                    "description" : "400 response",
-                    "responseTemplates" : {
-                        "application/json" : ""
-                  }
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
+              }
           }
         },
         "operationId" : "account_status_change_retrieve_last_primary_name_change_date_account_status_change_v0_retrieve_last_primary_name_change_date_post",
@@ -3875,13 +3875,13 @@
                     "application/json" : ""
                 }
               },
-              "4\\d{2}" : {
-                    "statusCode" : "400",
-                    "description" : "400 response",
-                    "responseTemplates" : {
-                        "application/json" : ""
-                  }
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
+              }
           }
         },       
         "operationId" : "account_status_retrieve_customer_type_account_status_v0_retrieve_customer_type_post",
@@ -3941,13 +3941,13 @@
                     "application/json" : ""
                 }
               },
-              "4\\d{2}" : {
-                    "statusCode" : "400",
-                    "description" : "400 response",
-                    "responseTemplates" : {
-                        "application/json" : ""
-                  }
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
+              }
           }
       },
       "requestTemplates": {
@@ -4283,13 +4283,13 @@
                     "application/json" : ""
                 }
               },
-              "4\\d{2}" : {
-                    "statusCode" : "400",
-                    "description" : "400 response",
-                    "responseTemplates" : {
-                        "application/json" : ""
-                  }
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
+              }
           }
         },
         "operationId" : "account_status_retrieve_primary_account_holder_account_status_v0_retrieve_primary_account_holder_post",
@@ -4349,13 +4349,13 @@
                     "application/json" : ""
                 }
               },
-              "4\\d{2}" : {
-                    "statusCode" : "400",
-                    "description" : "400 response",
-                    "responseTemplates" : {
-                        "application/json" : ""
-                  }
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
+              }
           }
         },
         "operationId" : "account_status_change_retrieve_last_number_change_date_account_status_change_v0_retrieve_last_number_change_date_post",
@@ -4607,13 +4607,13 @@
                     "application/json" : ""
                 }
               },
-              "4\\d{2}" : {
-                    "statusCode" : "400",
-                    "description" : "400 response",
-                    "responseTemplates" : {
-                        "application/json" : ""
-                  }
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
+              }
           }
         },
         "operationId" : "account_status_change_retrieve_bundle_account_status_change_v0_retrieve_bundle_post",
