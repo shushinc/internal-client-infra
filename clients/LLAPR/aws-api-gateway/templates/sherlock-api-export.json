@@ -378,12 +378,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -656,12 +736,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -1234,12 +1394,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -1300,12 +1540,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -1568,12 +1888,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -2436,12 +2836,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -2773,13 +3253,13 @@
                     "application/json" : ""
                 }
               },
-              "4\\d{2}" : {
-                    "statusCode" : "400",
-                    "description" : "400 response",
-                    "responseTemplates" : {
-                        "application/json" : ""
-                  }
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
                 }
+              }
           }
         },
         "operationId" : "routing_status_retrieve_bundle_routing_status_v0_retrieve_bundle_post",
@@ -2800,6 +3280,26 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -3052,12 +3552,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -3512,12 +4092,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -3830,12 +4490,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -3896,12 +4636,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -3975,12 +4795,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -4304,12 +5204,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -4370,12 +5350,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -4628,12 +5688,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
