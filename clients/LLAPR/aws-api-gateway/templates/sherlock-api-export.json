@@ -2664,6 +2664,258 @@
         } ]
       }
     },
+    "/number-verification/v0/retrieve_phone_number" : {
+      "get" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/number-verification/v0/retrieve_phone_number",
+          "httpMethod": "GET",
+          "type": "HTTP",
+          "passthroughBehavior": "WHEN_NO_MATCH",
+          "requestTemplates": {
+            "application/json": ""
+          },
+          
+          "responses" : {
+            "2\\d{2}" : {
+                "statusCode" : "200",
+                "description" : "200 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
+          }
+        },
+        "operationId" : "number_verification_retrieve_number_by_token_number_verification_v0_retrieve_phone_number_get",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/NumberRetrieveByTokenResponseGSMA"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/NumberRetrieveByTokenResponseGSMA"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "sherlockapiresource/write" ]
+        } ]
+      }
+    },
+    "/number-verification/v0/verify_phone_number" : {
+      "post" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/number-verification/v0/verify_phone_number",
+          "httpMethod": "POST",
+          "type": "HTTP",
+          "passthroughBehavior": "WHEN_NO_MATCH",
+          "requestTemplates": {
+            "application/json": ""
+          },
+          
+          "responses" : {
+            "2\\d{2}" : {
+                "statusCode" : "200",
+                "description" : "200 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
+          }
+        },
+        "operationId" : "number_verification_verify_number_by_token_number_verification_v0_verify_phone_number_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "sherlockapiresource/write" ]
+        } ]
+      }
+    },
     "/billing_address_verify" : {
       "post" : {
         "x-amazon-apigateway-integration": {
@@ -3446,10 +3698,10 @@
         } ]
       }
     },
-    "/count-status-change/v0/retrieve-msisdn-porting-status" : {
+    "/account-status-change/v0/retrieve-msisdn-porting-status" : {
       "post" : {
         "x-amazon-apigateway-integration": {
-          "uri": "${base_url}/count-status-change/v0/retrieve-msisdn-porting-status",
+          "uri": "${base_url}/account-status-change/v0/retrieve-msisdn-porting-status",
           "httpMethod": "POST",
           "type": "HTTP",
           "passthroughBehavior": "WHEN_NO_MATCH",
@@ -3486,12 +3738,72 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -5929,6 +6241,142 @@
           "SherlockAuthorizer" : [ "sherlockapiresource/write" ]
         } ]
       }
+    },
+    "/v0/authenticate_user" : {
+      "get" : {
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/v0/authenticate_user",
+          "httpMethod": "GET",
+          "type": "HTTP",
+          "passthroughBehavior": "WHEN_NO_MATCH",
+          "requestTemplates": {
+            "application/json": ""
+          },
+          
+          "responses" : {
+            "2\\d{2}" : {
+                "statusCode" : "200",
+                "description" : "200 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
+          }
+        },
+        "operationId" : "authenticate_user_v0_authenticate_user_get",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ZeroTrustSilentAuthenticationVerifyIPAddressResponse"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ZeroTrustSilentAuthenticationVerifyIPAddressResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "sherlockapiresource/write" ]
+        } ]
+      }
     }
   },
   "components" : {
@@ -7444,6 +7892,18 @@
             "type" : "string"
           }
         }
+      },
+      "NumberRetrieveByTokenResponseGSMA": {
+        "title": "NumberRetrieveByTokenResponseGSMA",
+        "type": "object",
+        "required": ["devicePhoneNumber"],
+        "properties": {
+          "devicePhoneNumber": {
+              "type": "string",
+              "title": "Devicephonenumber",
+              "example": "+18184823381"
+          }
+        }         
       }
     },
    "securitySchemes": {
