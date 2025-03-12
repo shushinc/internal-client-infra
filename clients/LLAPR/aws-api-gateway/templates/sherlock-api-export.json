@@ -1315,7 +1315,28 @@
         "x-amazon-apigateway-integration": {
           "uri": "${base_url}/device-sim-status/v0/retrieve-bundle",
           "httpMethod": "POST",
-          "type": "HTTP"
+          "type": "HTTP",
+          "passthroughBehavior": "WHEN_NO_MATCH",
+          "requestTemplates": {
+            "application/json": ""
+          },
+          
+          "responses" : {
+            "2\\d{2}" : {
+                "statusCode" : "200",
+                "description" : "200 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              }
+          }
         },
         "operationId" : "device_sim_status_retrieve_bundle_device_sim_status_v0_retrieve_bundle_post",
         "requestBody" : {
@@ -1329,12 +1350,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -5064,7 +5165,7 @@
           "requestTemplates": {
             "application/json": ""
           },
-          
+
           "responses" : {
             "2\\d{2}" : {
                 "statusCode" : "200",
@@ -5082,21 +5183,8 @@
               }
           }
       },
-      "requestTemplates": {
-        "application/json": ""
-      },
-      "passthroughBehavior": "WHEN_NO_MATCH"
-        },
-        "x-amazon-apigateway-method-responses": {
-          "200": {
-            "description": "Successful response",
-            "responseModels": {
-              "application/json": "DeviceSimStatusDeviceLostStolenIndicatorResponse"
-            }
-          }
-        },
-        "operationId" : "device_sim_status_retrieve_device_lost_stolen_status_device_sim_status_v0_retrieve_device_lost_stolen_status_post",
-        "requestBody" : {
+      "operationId" : "device_sim_status_retrieve_device_lost_stolen_status_device_sim_status_v0_retrieve_device_lost_stolen_status_post",
+      "requestBody" : {
           "content" : {
             "application/json" : {
               "schema" : {
@@ -5105,8 +5193,8 @@
             }
           },
           "required" : true
-        },
-        "responses" : {
+      },
+      "responses" : {
           "400" : {
             "description" : "400 response",
             "content" : {
@@ -5207,11 +5295,11 @@
               }
             }
           }
-        },
-        "security" : [ {
+      },
+      "security" : [ {
           "SherlockAuthorizer" : [ "sherlockapiresource/write" ]
-        } ]
-      
+      } ]
+      }
     },
     "/" : {
       "get" : {
