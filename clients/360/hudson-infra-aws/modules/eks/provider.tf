@@ -13,7 +13,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket       = "prod-llapr-terraform-state"
+    bucket       = "prod-360-terraform-state"
     key          = "eks/terraform.tfstate"
     region       = "us-east-1"
     use_lockfile = true

@@ -1,7 +1,7 @@
 # Values
 
 aws_region       = "us-east-1"
-vpc_name         = "llapr-vpc"
+vpc_name         = "360-vpc"
 eks_cluster_name = "eks-hudson"
 cluster_version  = "1.31"
 eks_managed_node_groups = {

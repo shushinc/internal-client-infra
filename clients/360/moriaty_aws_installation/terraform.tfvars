@@ -1,0 +1,10 @@
+aws_region        = "us-east-1"
+number_of_instances = 2
+git_repo = "https://github.com/shushinc/shushportal.git"
+dest_dir = "/var/www/html/shushportal"
+branch = "aws"
+vpc_id = "" # Need to update this based on your new vpc
+public_subnets = ["subnet-xxxxxx","subnet-xxxx","subnet-xxx"] # Need to update this based on your new vpc
+public_subnet = "subnet-xxxxxxx" #Need to update this based on your new vpc
+private_subnets = ["subnet-xxxxxx", "subnet-xxxxx", "subnet-xxxxx"] #Need to update this based on your new vpc
+private_subnet = "subnet-xxxx" #Need to update this based on your new vpc
