@@ -46,7 +46,7 @@ resource "aws_instance" "moriarty_runtime" {
   key_name      = aws_key_pair.ssh_key.key_name
   security_groups = [aws_security_group.moriarty_ec2_sg.id]
   iam_instance_profile = aws_iam_instance_profile.developer_portal_instance_profile.name
-  # depends_on = [aws_instance.importer_instance,null_resource.wait_for_importer]
+  depends_on = [aws_instance.importer_instance, null_resource.wait_for_importer]
   subnet_id  = var.private_subnet
   associate_public_ip_address = false
 
@@ -506,8 +506,8 @@ resource "aws_instance" "importer_instance" {
   key_name      = aws_key_pair.ssh_key.key_name
   vpc_security_group_ids = [aws_security_group.moriarty_ec2_sg.id]
   iam_instance_profile = aws_iam_instance_profile.developer_portal_instance_profile.name
-  subnet_id = var.private_subnet
-  associate_public_ip_address = false
+  subnet_id = var.public_subnet
+  associate_public_ip_address = true
   depends_on =[
     aws_db_instance.moriarty,
     aws_security_group.moriarty_ec2_sg
@@ -561,22 +561,24 @@ resource "aws_instance" "importer_instance" {
   }
 }
 
-# resource "null_resource" "wait_for_importer" {
-#   depends_on = [aws_instance.importer_instance]
+resource "null_resource" "wait_for_importer" {
+  depends_on = [aws_instance.importer_instance]
 
-#   provisioner "remote-exec" {
-#     inline = [
-#       "while [ ! -f /tmp/user_data_complete ]; do echo 'Waiting for importer script...'; sleep 10; done",
-#     ]
+  provisioner "remote-exec" {
+    inline = [
+      "while [ ! -f /tmp/user_data_complete ]; do echo 'Waiting for importer script...'; sleep 10; done",
+    ]
 
-#     connection {
-#       type        = "ssh"
-#       user        = "ec2-user" # Update based on your AMI
-#       private_key = file("~/.ssh/id_rsa")
-#       host        = aws_instance.importer_instance.private_ip
-#     }
-#   }
-# }
+    connection {
+      type        = "ssh"
+      user        = "ec2-user" # Update based on your AMI
+      private_key = file("~/.ssh/id_rsa")
+      host        = aws_instance.importer_instance.public_ip
+      timeout     = "10m"
+    }
+  }
+  
+}
 
 
 # Random ID for S3 bucket naming

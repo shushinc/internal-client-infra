@@ -5,5 +5,6 @@ dest_dir = "/var/www/html/shushportal"
 branch = "aws"
 vpc_id = "vpc-0ecf3974f51270545"
 public_subnets = ["subnet-05043b0fb99fb8d27","subnet-03cd20dbb6734b940","subnet-06059aeec3b2d7dc9"]
-
-
+public_subnet = "subnet-05043b0fb99fb8d27"
+private_subnets = ["subnet-076460d766f5bed11", "subnet-0d26b6233bc3b94dc", "subnet-0500007c9eaad3c74"]
+private_subnet = "subnet-076460d766f5bed11"

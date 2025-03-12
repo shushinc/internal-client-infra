@@ -85,22 +85,23 @@ variable "vpc_id" {
 variable "public_subnets" {
   description = "public_subnets"
   type        = list(string)
+ 
 }
 
 variable "public_subnet" {
   description = "public_subnets="
   type        = string
-  default     = "subnet-0c45f007fddcb37ee"
+ 
 }
 
 variable "private_subnets" {
   description = "private_subnets"
   type        = list
-  default     = ["subnet-057cee51588896623", "subnet-0367fddfe5612a87a", "subnet-09da3ec09218374ff"]
+  
 }
 
 variable "private_subnet" {
   description = "private_subnet"
   type        = string
-  default     = "subnet-057cee51588896623"
+
 }
