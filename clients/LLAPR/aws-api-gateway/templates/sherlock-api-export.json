@@ -2767,6 +2767,16 @@
     },
     "/number-verification/v0/retrieve_phone_number" : {
       "get" : {
+        "parameters": [
+            {
+              "name": "msisdn",
+              "in": "header",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
         "x-amazon-apigateway-integration": {
           "uri": "${base_url}/number-verification/v0/retrieve_phone_number",
           "httpMethod": "GET",
@@ -2775,7 +2785,9 @@
           "requestTemplates": {
             "application/json": ""
           },
-          
+          "requestParameters" : {
+            "integration.request.header.msisdn" : "method.request.header.msisdn"
+          },
           "responses" : {
             "2\\d{2}" : {
                 "statusCode" : "200",
@@ -2893,6 +2905,16 @@
     },
     "/number-verification/v0/verify_phone_number" : {
       "post" : {
+        "parameters": [
+          {
+            "name": "msisdn",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "x-amazon-apigateway-integration": {
           "uri": "${base_url}/number-verification/v0/verify_phone_number",
           "httpMethod": "POST",
@@ -2901,7 +2923,9 @@
           "requestTemplates": {
             "application/json": ""
           },
-          
+          "requestParameters" : {
+            "integration.request.header.msisdn" : "method.request.header.msisdn"
+          },
           "responses" : {
             "2\\d{2}" : {
                 "statusCode" : "200",
@@ -6412,6 +6436,48 @@
     },
     "/v0/authenticate_user" : {
       "get" : {
+        "parameters": [
+            {
+              "name": "identifier",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "carrierName",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "customerName",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "msisdn",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "ipAddress",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
         "x-amazon-apigateway-integration": {
           "uri": "${base_url}/v0/authenticate_user",
           "httpMethod": "GET",
@@ -6420,7 +6486,13 @@
           "requestTemplates": {
             "application/json": ""
           },
-          
+          "requestParameters" : {
+            "integration.request.querystring.identifier" : "method.request.querystring.identifier",
+            "integration.request.querystring.carrierName" : "method.request.querystring.carrierName",
+            "integration.request.querystring.customerName" : "method.request.querystring.customerName",
+            "integration.request.querystring.ipAddress" : "method.request.querystring.ipAddress",
+            "integration.request.querystring.msisdn" : "method.request.querystring.msisdn"
+          },
           "responses" : {
             "2\\d{2}" : {
                 "statusCode" : "200",
@@ -6439,16 +6511,6 @@
           }
         },
         "operationId" : "authenticate_user_v0_authenticate_user_get",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/ZeroTrustSilentAuthenticationVerifyIPAddressResponse"
-              }
-            }
-          },
-          "required" : true
-        },
         "responses" : {
           "200" : {
             "description" : "200 response",
