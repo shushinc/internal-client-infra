@@ -698,7 +698,7 @@ resource "aws_iam_policy" "sherlock_auth_policy_1" {
           "cognito-idp:DescribeUserPool",
           "cognito-idp:ListUserPoolClients"
         ],
-        Resource = "arn:aws:cognito-idp:us-east-1:537124973831:userpool/*"
+        Resource = "arn:aws:cognito-idp:us-east-1:122610478941:userpool/*"
       }
     ]
   })
@@ -721,7 +721,7 @@ resource "aws_iam_policy" "sherlock_auth_policy_2" {
           "cognito-idp:UpdateUserPoolClient",
           "cognito-idp:DeleteUserPoolClient"
         ],
-        Resource = "arn:aws:cognito-idp:us-west-1:537124973831:userpool/us-west-1_8rBeQnnlY"
+        Resource = "arn:aws:cognito-idp:us-west-1:122610478941:userpool/us-west-1_8rBeQnnlY"
       }
     ]
   })
@@ -744,7 +744,7 @@ resource "aws_iam_policy" "sherlock_auth_policy_3" {
           "cognito-idp:UpdateUserPoolClient",
           "cognito-idp:DeleteUserPoolClient"
         ],
-        Resource = "arn:aws:cognito-idp:us-west-1:537124973831:userpool/us-west-1_8rBeQnnlY"
+        Resource = "arn:aws:cognito-idp:us-west-1:122610478941:userpool/us-west-1_8rBeQnnlY"
       },
       {
         Effect = "Allow",
@@ -754,7 +754,7 @@ resource "aws_iam_policy" "sherlock_auth_policy_3" {
           "logs:GetLogEvents",
           "logs:FilterLogEvents"
         ],
-        Resource = "arn:aws:logs:us-west-1:537124973831:log-group:/aws/api-gateway/dev:*"
+        Resource = "arn:aws:logs:us-west-1:122610478941:log-group:/aws/api-gateway/dev:*"
       }
     ]
   })
