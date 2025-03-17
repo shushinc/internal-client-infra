@@ -9,6 +9,10 @@ variable "ami_id" {
   default     = "ami-0df8c184d5f6ae949" # AmazonLinux
 }
 
+variable "cognito_user_pool_id" {
+  description = "Cognito user poolId, which is created from previous aws api gateway"
+  type        = string
+}
 
 
 variable "importer_instances_ami_id" {
