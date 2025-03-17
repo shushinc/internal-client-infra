@@ -279,6 +279,8 @@ resource "aws_instance" "moriarty_runtime" {
     /var/www/html/shushportal/vendor/bin/drush en zcs_kong -y
     echo "DisAble zcs_kong module"
     /var/www/html/shushportal/vendor/bin/drush pmu zcs_kong -y
+    echo "DisAble zcs_api_attributes module"
+    /var/www/html/shushportal/vendor/bin/drush pmu zcs_api_attributes -y
     echo "Enable zcs_aws module"
     /var/www/html/shushportal/vendor/bin/drush en zcs_aws -y
     # echo "Enable zcs_custom module"
@@ -683,6 +685,12 @@ resource "aws_iam_role" "sherlock_auth_role" {
   })
 }
 
+# Extract AWS Account ID from the IAM User ARN
+locals {
+  sherlock_account_id = split(":", aws_iam_user.sherlock_auth_user.arn)[4]
+}
+
+
 # First Policy - us-east-1 User Pool Access
 resource "aws_iam_policy" "sherlock_auth_policy_1" {
   name        = "SherlockAuthPolicyEast"
@@ -698,7 +706,7 @@ resource "aws_iam_policy" "sherlock_auth_policy_1" {
           "cognito-idp:DescribeUserPool",
           "cognito-idp:ListUserPoolClients"
         ],
-        Resource = "arn:aws:cognito-idp:us-east-1:122610478941:userpool/*"
+        Resource = "arn:aws:cognito-idp:us-east-1:${local.sherlock_account_id}:userpool/${var.cognito_user_pool_id}"
       }
     ]
   })
@@ -707,7 +715,7 @@ resource "aws_iam_policy" "sherlock_auth_policy_1" {
 # Second Policy - us-west-1 Specific User Pool
 resource "aws_iam_policy" "sherlock_auth_policy_2" {
   name        = "SherlockAuthPolicyWest"
-  description = "Policy for managing a specific Cognito user pool in us-west-1"
+  description = "Policy for managing a specific Cognito user pool"
 
   policy = jsonencode({
     Version = "2012-10-17",
@@ -721,7 +729,7 @@ resource "aws_iam_policy" "sherlock_auth_policy_2" {
           "cognito-idp:UpdateUserPoolClient",
           "cognito-idp:DeleteUserPoolClient"
         ],
-        Resource = "arn:aws:cognito-idp:us-west-1:122610478941:userpool/us-west-1_8rBeQnnlY"
+        Resource = "arn:aws:cognito-idp:us-west-1:${local.sherlock_account_id}:userpool/${var.cognito_user_pool_id}"
       }
     ]
   })
@@ -744,7 +752,7 @@ resource "aws_iam_policy" "sherlock_auth_policy_3" {
           "cognito-idp:UpdateUserPoolClient",
           "cognito-idp:DeleteUserPoolClient"
         ],
-        Resource = "arn:aws:cognito-idp:us-west-1:122610478941:userpool/us-west-1_8rBeQnnlY"
+        Resource = "arn:aws:cognito-idp:us-west-1:${local.sherlock_account_id}:userpool/${var.cognito_user_pool_id}"
       },
       {
         Effect = "Allow",
@@ -754,7 +762,7 @@ resource "aws_iam_policy" "sherlock_auth_policy_3" {
           "logs:GetLogEvents",
           "logs:FilterLogEvents"
         ],
-        Resource = "arn:aws:logs:us-west-1:122610478941:log-group:/aws/api-gateway/dev:*"
+        Resource = "arn:aws:logs:us-west-1:${local.sherlock_account_id}:log-group:/aws/api-gateway/dev:*"
       }
     ]
   })
