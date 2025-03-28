@@ -1,0 +1,74 @@
+# Deploying an AWS Lambda Function Using a Docker Image (AWS Console)
+
+This guide walks through deploying an AWS Lambda function using a Docker container image via the AWS Console.
+
+## **Prerequisites**
+- An AWS account with access to AWS Lambda and Amazon Elastic Container Registry (ECR).
+- AWS CLI installed and configured.
+- Docker installed and running.
+
+---
+## **Step 1: Create an Amazon ECR Repository**
+1. Sign in to the [AWS Console](https://aws.amazon.com/console/).
+2. Navigate to **Elastic Container Registry (ECR)**.
+3. Click **Create Repository**.
+4. Choose **Private repository** (or **Public** if required).
+5. Enter a **Repository name** (e.g., `aggregates`).
+6. Click **Create Repository**.
+7. Copy the **Repository URI** (e.g., `XXXXXXXX.dkr.ecr.us-east-1.amazonaws.com/my-lambda-repo`).
+
+---
+
+## **Step 2: Build and Push a Docker Image**
+1. Open a terminal and authenticate Docker with ECR:
+
+   ```sh
+   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin XXXXXXXX.dkr.ecr.us-east-1.amazonaws.com
+   ```
+2. Update the IP Address in the portal_api_config.cfg
+
+Build the Docker image:
+
+```sh
+docker build -t my-lambda-image .
+```
+Tag the image for ECR:
+
+```sh
+docker tag my-lambda-image:latest XXXXXXX.dkr.ecr.us-east-1.amazonaws.com/my-lambda-repo:latest
+```
+
+Push the image to ECR:
+
+```sh
+docker push XXXXXXXX.dkr.ecr.us-east-1.amazonaws.com/my-lambda-repo:latest
+```
+
+## **Step 3: Create the Lambda Function
+1. Go to the AWS Lambda service in the AWS Console.
+2. Click Create function.
+3. Select Container image as the function type.
+4. Enter a Function name (e.g., my-lambda-docker).
+5. Under Container image URI, click Browse images and select the image from the ECR repository.
+6. Select an Execution role:
+    - Choose Create a new role with basic Lambda permissions OR
+    - Use an existing role with AWSLambdaBasicExecutionRole.
+7. Click Create function.
+
+## **Step 4: Test the Lambda Function
+1. Click Test in the Lambda function page.
+
+2. Create a new test event:
+    - Choose Create new test event.
+    - Set Event name to TestEvent.
+3. Click Create.
+4. Click Test again to invoke the function.
+5. Check the Execution results for the output.
+
+## **Step 5: Monitor and Update
+- Use Amazon CloudWatch to monitor logs and execution performance.
+- To update the function:
+    1. Push a new image to ECR.
+    2. Go to Lambda > my-lambda-docker.
+    3. Click Deploy new image and select the latest version.
+

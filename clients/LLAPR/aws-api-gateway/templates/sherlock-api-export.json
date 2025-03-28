@@ -32,7 +32,14 @@
               "responseTemplates" : {
                   "application/json" : ""
               }
-            }
+            },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              }
         }
       },
       "operationId": "sim_swap_date_GSMA_sim_swap_v0_check_post",
@@ -173,7 +180,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                  "statusCode" : "400",
+                  "description" : "400 response",
+                  "responseTemplates" : {
+                      "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "device_sim_status_retrieve_imei_device_sim_status_v0_retrieve_imei_post",
@@ -342,6 +356,13 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
           }
         },
@@ -357,12 +378,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -401,7 +502,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                  "statusCode" : "400",
+                  "description" : "400 response",
+                  "responseTemplates" : {
+                      "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "sim_swap_date_GSMA_sim_swap_v0_retrieve_date_post",
@@ -540,7 +648,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                  "statusCode" : "400",
+                  "description" : "400 response",
+                  "responseTemplates" : {
+                      "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "in_call_state_retrieve_active_inbound_in_call_state_v0_retrieve_active_inbound_post",
@@ -599,6 +714,13 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
           }
         },
@@ -614,12 +736,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -658,7 +860,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                  "statusCode" : "400",
+                  "description" : "400 response",
+                  "responseTemplates" : {
+                      "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "device_sim_status_check_sim_swap_lab_imsi_change_date_check_post",
@@ -796,6 +1005,13 @@
                 "description" : "200 response",
                 "responseTemplates" : {
                     "application/json" : ""
+                }
+              },
+            "4\\d{2}" : {
+                  "statusCode" : "400",
+                  "description" : "400 response",
+                  "responseTemplates" : {
+                      "application/json" : ""
                 }
               }
           }
@@ -936,7 +1152,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "routing_status_retrieve_call_forwarding_routing_status_v0_retrieve_call_forwarding_post",
@@ -1092,7 +1315,28 @@
         "x-amazon-apigateway-integration": {
           "uri": "${base_url}/device-sim-status/v0/retrieve-bundle",
           "httpMethod": "POST",
-          "type": "HTTP"
+          "type": "HTTP",
+          "passthroughBehavior": "WHEN_NO_MATCH",
+          "requestTemplates": {
+            "application/json": ""
+          },
+          
+          "responses" : {
+            "2\\d{2}" : {
+                "statusCode" : "200",
+                "description" : "200 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              }
+          }
         },
         "operationId" : "device_sim_status_retrieve_bundle_device_sim_status_v0_retrieve_bundle_post",
         "requestBody" : {
@@ -1106,12 +1350,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -1142,14 +1466,21 @@
             "application/json": ""
           },
           "responses" : {
-          "2\\d{2}" : {
-              "statusCode" : "200",
-              "description" : "200 response",
-              "responseTemplates" : {
-                  "application/json" : ""
+            "2\\d{2}" : {
+                "statusCode" : "200",
+                "description" : "200 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
-            }
-        }
+          }
         },
         
         "operationId" : "account_status_retrieve_account_type_account_status_v0_retrieve_account_type_post",
@@ -1164,12 +1495,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -1208,6 +1619,13 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
           }
         },
@@ -1223,12 +1641,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -1267,7 +1765,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "account_status_retrieve_bundle_account_status_v0_retrieve_bundle_post",
@@ -1326,7 +1831,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "number_verification_verify_email_address_customer_verification_v0_verify_email_address_post",
@@ -1455,6 +1967,13 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
           }
         },
@@ -1470,12 +1989,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -1514,7 +2113,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "device_location_verify_device_location_v0_verify_device_location_post",
@@ -1633,7 +2239,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "device_sim_status_retrieve_imsi_change_date_lab_imsi_change_date_post",
@@ -1772,7 +2385,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "number_verification_verify_email_address_email_verify_post",
@@ -1901,7 +2521,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "device_sim_status_retrieve_imei_activation_date_device_sim_status_v0_retrieve_imei_activation_date_post",
@@ -2030,7 +2657,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "number_verification_verify_number_number_verification_v0_verify_number_post",
@@ -2131,6 +2765,282 @@
         } ]
       }
     },
+    "/number-verification/v0/retrieve_phone_number" : {
+      "get" : {
+        "parameters": [
+            {
+              "name": "msisdn",
+              "in": "header",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/number-verification/v0/retrieve_phone_number",
+          "httpMethod": "GET",
+          "type": "HTTP",
+          "passthroughBehavior": "WHEN_NO_MATCH",
+          "requestTemplates": {
+            "application/json": ""
+          },
+          "requestParameters" : {
+            "integration.request.header.msisdn" : "method.request.header.msisdn"
+          },
+          "responses" : {
+            "2\\d{2}" : {
+                "statusCode" : "200",
+                "description" : "200 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
+          }
+        },
+        "operationId" : "number_verification_retrieve_number_by_token_number_verification_v0_retrieve_phone_number_get",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/NumberRetrieveByTokenResponseGSMA"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/NumberRetrieveByTokenResponseGSMA"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "sherlockapiresource/write" ]
+        } ]
+      }
+    },
+    "/number-verification/v0/verify_phone_number" : {
+      "post" : {
+        "parameters": [
+          {
+            "name": "msisdn",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/number-verification/v0/verify_phone_number",
+          "httpMethod": "POST",
+          "type": "HTTP",
+          "passthroughBehavior": "WHEN_NO_MATCH",
+          "requestTemplates": {
+            "application/json": ""
+          },
+          "requestParameters" : {
+            "integration.request.header.msisdn" : "method.request.header.msisdn"
+          },
+          "responses" : {
+            "2\\d{2}" : {
+                "statusCode" : "200",
+                "description" : "200 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
+          }
+        },
+        "operationId" : "number_verification_verify_number_by_token_number_verification_v0_verify_phone_number_post",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MSISDNBasicRequestSchema"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "sherlockapiresource/write" ]
+        } ]
+      }
+    },
     "/billing_address_verify" : {
       "post" : {
         "x-amazon-apigateway-integration": {
@@ -2149,7 +3059,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "number_verification_verify_billing_address_lab_billing_address_verify_post",
@@ -2208,7 +3125,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "number_verification_verify_bundle_customer_verification_v0_verify_bundle_post",
@@ -2267,6 +3191,13 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
           }
         },
@@ -2282,12 +3213,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -2326,7 +3337,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "device_sim_status_retrieve_imsi_change_date_device_sim_status_v0_retrieve_imsi_change_date_post",
@@ -2462,6 +3480,13 @@
             "2\\d{2}" : {
                 "statusCode" : "200",
                 "description" : "200 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
                 "responseTemplates" : {
                     "application/json" : ""
                 }
@@ -2604,6 +3629,13 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
           }
         },
@@ -2625,6 +3657,26 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -2663,7 +3715,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "device_location_retrieve_device_location_device_location_v0_retrieve_device_location_post",
@@ -2764,10 +3823,10 @@
         } ]
       }
     },
-    "/count-status-change/v0/retrieve-msisdn-porting-status" : {
+    "/account-status-change/v0/retrieve-msisdn-porting-status" : {
       "post" : {
         "x-amazon-apigateway-integration": {
-          "uri": "${base_url}/count-status-change/v0/retrieve-msisdn-porting-status",
+          "uri": "${base_url}/account-status-change/v0/retrieve-msisdn-porting-status",
           "httpMethod": "POST",
           "type": "HTTP",
           "passthroughBehavior": "WHEN_NO_MATCH",
@@ -2782,7 +3841,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "account_status_change_retrieve_msisdn_porting_status_count_status_change_v0_retrieve_msisdn_porting_status_post",
@@ -2797,12 +3863,72 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -2841,6 +3967,13 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
           }
         },
@@ -2856,12 +3989,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -2900,7 +4113,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "number_verification_verify_age_age_verify_post",
@@ -2959,7 +4179,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "number_verification_verify_name_customer_verification_v0_verify_name_post",
@@ -3088,7 +4315,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "number_verification_verify_number_lab_number_verify_post",
@@ -3207,7 +4441,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "in_call_state_retrieve_bundle_in_call_state_v0_retrieve_bundle_post",
@@ -3266,7 +4507,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "number_verification_verify_age_customer_verification_v0_verify_age_post",
@@ -3281,12 +4529,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -3325,7 +4653,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "routing_status_retrieve_roaming_status_GSMA_device_status_v0_roaming_post",
@@ -3444,7 +4779,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "routing_status_retrieve_roaming_status_GSMA_device_status_v0_connectivity_post",
@@ -3563,6 +4905,13 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
           }
         },
@@ -3578,12 +4927,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -3622,6 +5051,13 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
           }
         },       
@@ -3637,12 +5073,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -3659,7 +5175,7 @@
           }
         },
         "security" : [ {
-          "SherlockAuthorizer" : [ ]
+          "SherlockAuthorizer" : [ "sherlockapiresource/write" ]
         } ]
       }
     },
@@ -3673,7 +5189,7 @@
           "requestTemplates": {
             "application/json": ""
           },
-          
+
           "responses" : {
             "2\\d{2}" : {
                 "statusCode" : "200",
@@ -3681,24 +5197,18 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
           }
       },
-      "requestTemplates": {
-        "application/json": ""
-      },
-      "passthroughBehavior": "WHEN_NO_MATCH"
-        },
-        "x-amazon-apigateway-method-responses": {
-          "200": {
-            "description": "Successful response",
-            "responseModels": {
-              "application/json": "DeviceSimStatusDeviceLostStolenIndicatorResponse"
-            }
-          }
-        },
-        "operationId" : "device_sim_status_retrieve_device_lost_stolen_status_device_sim_status_v0_retrieve_device_lost_stolen_status_post",
-        "requestBody" : {
+      "operationId" : "device_sim_status_retrieve_device_lost_stolen_status_device_sim_status_v0_retrieve_device_lost_stolen_status_post",
+      "requestBody" : {
           "content" : {
             "application/json" : {
               "schema" : {
@@ -3707,14 +5217,94 @@
             }
           },
           "required" : true
-        },
-        "responses" : {
+      },
+      "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -3729,11 +5319,11 @@
               }
             }
           }
-        },
-        "security" : [ {
+      },
+      "security" : [ {
           "SherlockAuthorizer" : [ "sherlockapiresource/write" ]
-        } ]
-      
+      } ]
+      }
     },
     "/" : {
       "get" : {
@@ -3753,7 +5343,14 @@
             "responseTemplates" : {
                 "application/json" : ""
             }
-          }
+          },
+          "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+              }
+            }
       }
     },
         "x-amazon-apigateway-method-responses": {
@@ -3797,7 +5394,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "silent_authentication_verify_ip_address_silent_authentication_v0_verify_ip_address_post",
@@ -3936,7 +5540,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "device_sim_status_retrieve_device_lost_stolen_date_device_sim_status_v0_device_sim_status_v0_retrieve_device_lost_stolen_date_post",
@@ -3951,12 +5562,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -3995,6 +5686,13 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
           }
         },
@@ -4010,12 +5708,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -4054,6 +5832,13 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
           }
         },
@@ -4069,12 +5854,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -4113,7 +5978,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "in_call_state_retrieve_active_outbound_in_call_state_v0_retrieve_active_outbound_post",
@@ -4172,7 +6044,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "routing_status_retrieve_roaming_status_routing_status_v0_retrieve_roaming_status_post",
@@ -4291,6 +6170,13 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
+              },
+            "4\\d{2}" : {
+                "statusCode" : "400",
+                "description" : "400 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
               }
           }
         },
@@ -4306,12 +6192,92 @@
           "required" : true
         },
         "responses" : {
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
           "422" : {
             "description" : "422 response",
             "content" : {
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "505" : {
+            "description" : "505 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
                 }
               }
             }
@@ -4350,7 +6316,14 @@
                 "responseTemplates" : {
                     "application/json" : ""
                 }
-              }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
           }
         },
         "operationId" : "number_verification_verify_billing_address_customer_verification_v0_verify_billing_address_post",
@@ -4371,6 +6344,180 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/CustomerVerificationBillingAddressResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422" : {
+            "description" : "422 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "401 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "500 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "403 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "404 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "503" : {
+            "description" : "503 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "504 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Message"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "SherlockAuthorizer" : [ "sherlockapiresource/write" ]
+        } ]
+      }
+    },
+    "/v0/authenticate_user" : {
+      "get" : {
+        "parameters": [
+            {
+              "name": "identifier",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "carrierName",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "customerName",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "msisdn",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "ipAddress",
+              "in": "query",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+        "x-amazon-apigateway-integration": {
+          "uri": "${base_url}/v0/authenticate_user",
+          "httpMethod": "GET",
+          "type": "HTTP",
+          "passthroughBehavior": "WHEN_NO_MATCH",
+          "requestTemplates": {
+            "application/json": ""
+          },
+          "requestParameters" : {
+            "integration.request.querystring.identifier" : "method.request.querystring.identifier",
+            "integration.request.querystring.carrierName" : "method.request.querystring.carrierName",
+            "integration.request.querystring.customerName" : "method.request.querystring.customerName",
+            "integration.request.querystring.ipAddress" : "method.request.querystring.ipAddress",
+            "integration.request.querystring.msisdn" : "method.request.querystring.msisdn"
+          },
+          "responses" : {
+            "2\\d{2}" : {
+                "statusCode" : "200",
+                "description" : "200 response",
+                "responseTemplates" : {
+                    "application/json" : ""
+                }
+              },
+              "4\\d{2}" : {
+                    "statusCode" : "400",
+                    "description" : "400 response",
+                    "responseTemplates" : {
+                        "application/json" : ""
+                  }
+                }
+          }
+        },
+        "operationId" : "authenticate_user_v0_authenticate_user_get",
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ZeroTrustSilentAuthenticationVerifyIPAddressResponse"
                 }
               }
             }
@@ -5975,6 +8122,18 @@
             "type" : "string"
           }
         }
+      },
+      "NumberRetrieveByTokenResponseGSMA": {
+        "title": "NumberRetrieveByTokenResponseGSMA",
+        "type": "object",
+        "required": ["devicePhoneNumber"],
+        "properties": {
+          "devicePhoneNumber": {
+              "type": "string",
+              "title": "Devicephonenumber",
+              "example": "+18184823381"
+          }
+        }         
       }
     },
    "securitySchemes": {

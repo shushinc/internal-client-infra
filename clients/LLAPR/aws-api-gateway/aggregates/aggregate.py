@@ -8,6 +8,7 @@ import requests
 import sys
 import os
 
+
 def read_config(config_file):
     try:
         with open(config_file, 'r') as file:
@@ -18,6 +19,16 @@ def read_config(config_file):
     except json.JSONDecodeError:
         print(f"Error: Invalid JSON format in configuration file '{config_file}'.")
         sys.exit(1)
+
+# def read_portal_ip_from_env():
+#     protocol = os.environ.get('PROTOCOL')
+#     portal_ip = os.environ.get('PORTAL_IP')
+
+#     if protocol and portal_ip:
+#         return protocol.lower(), portal_ip
+#     else:
+#         print("Error: Missing environment variable 'PROTOCOL' or 'PORTAL_IP'.")
+#         sys.exit(1)
 
 def read_portal_ip_from_file(file_path):
     try:
@@ -43,11 +54,10 @@ def read_portal_ip_from_file(file_path):
         sys.exit(1)
 
 
-
-def read_logs_from_cloudwatch(log_group_name, start_time, end_time):
+def read_logs_from_cloudwatch(log_group_name, start_time, end_time, region):
     try:
         # Create a boto3 client for CloudWatch Logs
-        client = boto3.client('logs')
+        client = boto3.client('logs', region_name=region)
 
         # Define the paginator to handle log streams
         paginator = client.get_paginator('filter_log_events')
@@ -82,11 +92,21 @@ def get_current_hour_times():
     end_time = start_time + timedelta(hours=1) - timedelta(seconds=1)
     return start_time, end_time
 
+# def process_timestamp(raw_timestamp):
+#     # Convert log timestamp to the start of the hour
+#     dt = datetime.strptime(raw_timestamp.split(" ")[0], "%d/%b/%Y:%H:%M:%S")
+#     dt = dt.replace(minute=0, second=0, microsecond=0)
+#     return dt.strftime("%Y-%m-%d %H:%M:%S")
+
 def process_timestamp(raw_timestamp):
-    # Convert log timestamp to the start of the hour
-    dt = datetime.strptime(raw_timestamp.split(" ")[0], "%d/%b/%Y:%H:%M:%S")
-    dt = dt.replace(minute=0, second=0, microsecond=0)
-    return dt.strftime("%Y-%m-%d %H:%M:%S")
+    try:
+        # Parse CloudWatch log timestamp format
+        dt = datetime.strptime(raw_timestamp.split(" ")[0], "%d/%b/%Y:%H:%M:%S")
+        dt = dt.replace(minute=0, second=0, microsecond=0)  # Round to start of hour
+        return dt.strftime("%Y-%m-%d %H:%M:%S")
+    except ValueError as e:
+        print(f"Error processing timestamp '{raw_timestamp}': {e}")
+        return "1970-01-01 00:00:00"  # Default fallback timestamp
 
 def load_pricing_sheet(pricing_file):
     try:
@@ -116,9 +136,18 @@ def process_logs(logs, endpoint_to_api, endpoint_to_price):
         carrier_name = log.get("customerName", "-") if log.get("customerName", "-") != "-" else "Unknown"
         endpoint = log.get("resourcePath", "Unknown")
 
+
         # Map endpoint to API and price using the pricing sheet, default to "Unknown" and 0
         attribute = endpoint_to_api.get(endpoint, "Unknown")
-        price = float(endpoint_to_price.get(endpoint, 0))
+
+        #price = float(endpoint_to_price.get(endpoint, 0))
+        # Ensure price is a valid float
+        price = endpoint_to_price.get(endpoint, 0)
+        try:
+            price = float(price) if str(price).replace('.', '', 1).isdigit() else 0.0
+        except ValueError:
+            price = 0.0
+
 
         # Unique key for aggregation
         unique_key = (timestamp_interval, customer_name, client, carrier_name, attribute)
@@ -141,7 +170,9 @@ def process_logs(logs, endpoint_to_api, endpoint_to_price):
     for (timestamp_interval, customer_name, client, carrier_name, attribute), status_counts in aggregated_logs.items():
         total_200_count = status_counts.get("200", 0)
         avg_latency = latency_sums[(timestamp_interval, customer_name, client, carrier_name, attribute)] // total_200_count if total_200_count > 0 else 0
-        est_revenue = revenue_sums[(timestamp_interval, customer_name, client, carrier_name, attribute)]
+        # est_revenue = revenue_sums[(timestamp_interval, customer_name, client, carrier_name, attribute)]
+        est_revenue = revenue_sums.get((timestamp_interval, customer_name, client, carrier_name, attribute), 0.0)
+
 
         # Create analytical_id
         analytical_id = f"{customer_name}|{client}|{carrier_name}|{attribute}"
@@ -166,7 +197,8 @@ def process_logs(logs, endpoint_to_api, endpoint_to_price):
     return output
 
 # Example usage
-if __name__ == "__main__":
+def lambda_handler(event, context):
+    # Your script content goes here. For example:
     config_file = 'config.json'
     pricing_file = 'api_pricing.csv'
     portal_ip_file = 'portal_api_config.cfg'
@@ -186,14 +218,14 @@ if __name__ == "__main__":
     # Read portal IP and protocol
     protocol, portal_ip = read_portal_ip_from_file(portal_ip_file)
     api_url = f"{protocol}://{portal_ip}/analytics/node/add"
-    print("api_url",api_url)
+    print("api_url", api_url)
 
     # Calculate start and end times for the current hour
     start_time, end_time = get_current_hour_times()
     print(f"Fetching logs from {start_time} to {end_time} for log group: {log_group_name}")
 
     # Fetch logs
-    cloudwatch_logs = read_logs_from_cloudwatch(log_group_name, start_time, end_time)
+    cloudwatch_logs = read_logs_from_cloudwatch(log_group_name, start_time, end_time, region="ap-southeast-1")
 
     # Process logs
     logs = [json.loads(log) for log in cloudwatch_logs]
@@ -207,10 +239,12 @@ if __name__ == "__main__":
 
     try:
         response = requests.post(api_url, headers=headers, json=output_data, timeout=10)
+
         success_status = "success" if response.status_code == 200 else "not-success"
         print(f"API Call Status: {success_status}, Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        # print(f"Response Status Code: {response.status_code}")
-        # print(f"Response Body: {response.text}")
+        print(f"Response Status Code: {response.status_code}")
+        print(f"Response Headers: {response.headers}")
+        print(f"Response Body: {response.text}")
     except requests.exceptions.Timeout:
         print(f"Error: API call to {api_url} timed out.")
     except requests.exceptions.RequestException as e:

@@ -153,7 +153,7 @@ resource "aws_api_gateway_stage" "sherlock" {
       status            = "$context.status",
       protocol          = "$context.protocol",
       responseLength    = "$context.responseLength",
-      responseLatency = "$context.reponseLatency",          # Total time taken
+      responseLatency = "$context.responseLatency",          # Total time taken
       client_id       = "$context.authorizer.claims.client_id",
       carrierName     = "$input.json('$.carrierName')", # Extract carrierName from request body
       customerName    = "$input.json('$.customerName')", # Extract customerName from request body
