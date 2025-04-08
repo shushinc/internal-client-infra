@@ -1,0 +1,38 @@
+api,network,attribute,endpoint,price,currency
+Retrieve Ip Address,,/silent-authentication/v0/retrieve-ip-address,0.0026,USD
+Verify Ip Address,,/silent-authentication/v0/verify-ip-address,N/A,USD
+Verify Number,,/number-verification/v0/verify-number,0.0026,USD
+Verify Name,,/customer-verification/v0/verify-name,0.0141,USD
+Verify Billing Address,Biliing Address,/customer-verification/v0/verify-billing-address,0.1013,USD
+Verify Email Address,,/customer-verification/v0/verify-email-address,0.0014,USD
+Verify Age,,/customer-verification/v0/verify-age,0.0026,USD
+Verify Bundle,,/customer-verification/v0/verify-bundle,0.0903,USD
+Retrieve Customer Type,,/account-status/v0/retrieve-customer-type,0.0026,USD
+Retrieve Account Type,"Billing Status, Billing Type",/account-status/v0/retrieve-account-type,0.0141,USD
+Retrieve Primary Account Holder,,/account-status/v0/retrieve-primary-account-holder,0.1013,USD
+Retrieve Service Activation Date,,/account-status/v0/retrieve-service-activation-date,0.0014,USD
+Retrieve Subscriber Account Status,,/account-status/v0/retrieve-subscriber-account-status,0.0026,USD
+Retrieve Bundle,,/account-status/v0/retrieve-bundle,N/A,USD
+Retrieve Last Number Change Date,,/account-status-change/v0/retrieve-last-number-change-date,0.0026,USD
+Retrieve Subscription Status Change Date,,/account-status-change/v0/retrieve-subscription-status-change-date,N/A,USD
+Account Status Change Retrieve Last Primary Name Change Date,,/account-status-change/v0/retrieve-last-primary-name-change-date,0.0026,USD
+Retrieve Last Billing Address Change Date,,/account-status-change/v0/retrieve-last-billing-address-change-date,0.0026,USD
+Retrieve Msisdn Porting Status,,/count-status-change/v0/retrieve-msisdn-porting-status,0.0026,USD
+Account Status Change Bundle,,/account-status-change/v0/retrieve-bundle,N/A,USD
+Retrieve Imei Activation Date,,/device-sim-status/v0/retrieve-imei-activation-date,0.0138,USD
+Retrieve Imei Change Date,,/device-sim-status/v0/retrieve-imei-change-date,0.0702,USD
+Retrieve Imei,,/device-sim-status/v0/retrieve-imei,0.8752,USD
+Retrieve Imsi Activation Date,,/device-sim-status/v0/retrieve-imsi-activation-date,0.0205,USD
+Retrieve Device Lost Stolen Status,,/device-sim-status/v0/retrieve-device-lost-stolen-status,0.1003,USD
+Retrieve Device Lost Stolen Date,,/device-sim-status/v0/device-sim-status/v0/retrieve-device-lost-stolen-date,0.0599,USD
+Check Sim Swap,,/device-sim-status/v0/check-sim-swap,N/A,USD
+Retrieve Imsi Change Date,,/device-sim-status/v0/retrieve-imsi-change-date,N/A,USD
+Device Sim Status Bundle,,/device-sim-status/v0/retrieve-bundle,N/A,USD
+Retrieve Call Forwarding,,/routing-status/v0/retrieve-call-forwarding,0.0049,USD
+Retrieve Roaming Status,,/routing-status/v0/retrieve-roaming-status,0.0762,USD
+Routing Status Bundle,,/routing-status/v0/retrieve-bundle,0.0565,USD
+Retrieve Active Inbound Call,,/in-call-state/v0/retrieve-active-inbound,0.0037,USD
+Retrieve Active Inbound Call,,/in-call-state/v0/retrieve-active-outbound,N/A,USD
+In Call State Bundle,,/in-call-state/v0/retrieve-bundle,#VALUE!,USD
+Retrieve Device Location,,/device-location/v0/retrieve-device-location,N/A,USD
+Device Location Verify,,/device-location/v0/verify-device-location,N/A,USD

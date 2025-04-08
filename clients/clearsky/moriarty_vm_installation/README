@@ -13,9 +13,13 @@ Root access (or a user with equivalent permissions)
 ```bash
 
 sudo su - ansible 
-git clone https://github.com/shushinc/moriaty_vm_installation.git
-cd moriaty_vm_installation
-git checkout ansible-code
+git clone git clone https://github.com/shushinc/internal-client-infra.git
+git checkout  client-clearsky 
+cd clients/clearsky/moriarty_vm_installation/
+verify IP:
+    inventory.yml
+    roles/runtime/tasks/main.yml( line number 134)
+
 ```
 2. Edit the inventory file to add the `ansible_user` you created during the prerequisites:
 ```bash

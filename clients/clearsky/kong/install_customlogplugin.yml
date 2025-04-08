@@ -1,0 +1,188 @@
+---
+- name: Ensure folder exists
+  hosts: all
+  become: true
+  vars:
+    kong_admin_port: 8001
+  tasks:
+    - name: Kong stop
+      shell: |
+        kong stop 
+      environment:
+        PATH: "/usr/local/bin:/usr/bin:/bin"  # Add the path to kong if necessary
+      args:
+        executable: /bin/bash
+      become: yes
+      become_user: root
+      register: kong_stop
+      ignore_errors: true
+      tags: 
+        - stop
+
+    - name: Debug Kong stop Output
+      debug:
+        msg: "Kong stop command output: {{ kong_stop.stdout | default('No output') }}"
+      when: kong_stop is defined
+      tags: 
+        - stop
+        
+    - name: Ensure /usr/local/share/lua/5.1/kong/plugins/ exists
+      file:
+        path: /usr/local/share/lua/5.1/kong/plugins/
+        state: directory
+        owner: kong
+        group: kong
+
+    - name: Ensure custom-log-plugin folder exists with permissions drwxrwxr-x
+      file:
+        path: /usr/local/share/lua/5.1/kong/plugins/custom-log-plugin
+        state: directory
+        owner: kong
+        group: kong
+        mode: '0775'
+    
+    - name: Copy each file in custom-log-plugin directory
+      copy:
+        src: "{{ item }}"
+        dest: /usr/local/share/lua/5.1/kong/plugins/custom-log-plugin/
+        owner: kong
+        group: kong
+        mode: '0775'
+      with_fileglob:
+        - "./custom-log-plugin/*"
+
+
+    - name: Ensure ggregates folder exists with permissions drwxrwxr-x
+      file:
+        path: /etc/kong/aggregates
+        state: directory
+        owner: kong
+        group: kong
+        mode: '0775'
+
+    - name: Copy each file in aggregates directory
+      copy:
+        src: "{{ item }}"
+        dest: /etc/kong/aggregates
+        owner: kong
+        group: kong
+        mode: '0775'
+      with_fileglob:
+        - "./aggregates/*"
+
+  
+    - name: Create the custom_api_transaction.log file
+      file:
+        path: /usr/local/kong/logs/custom_api_transaction.log
+        state: touch
+        owner: kong
+        group: kong
+        mode: '0775'
+
+    - name: Take a backup of kong.conf
+      copy:
+        src: /etc/kong/kong.conf
+        dest: /etc/kong/.kong.conf
+        remote_src: yes
+
+    - name: Find line number of #plugins = bundled
+      command: grep -n '^#plugins = bundled' /etc/kong/kong.conf
+      register: plugins_line
+      changed_when: false
+
+    - name: Display line number of #plugins = bundled
+      debug:
+        msg: "Line number of #plugins = bundled: {{ plugins_line.stdout }}"
+
+    - name: Find line number of #log_level = notice
+      command: grep -n '^#log_level = notice' /etc/kong/kong.conf
+      register: log_level_line
+      changed_when: false
+
+    - name: Display line number of #log_level = notice
+      debug:
+        msg: "Line number of #log_level = notice: {{ log_level_line.stdout }}"
+
+    - name: Replace #plugins = bundled with plugins = bundled,custom-log-plugin
+      lineinfile:
+        path: /etc/kong/kong.conf
+        regexp: '^#plugins = bundled'
+        line: 'plugins = bundled,custom-log-plugin'
+        state: present
+
+    - name: Replace #log_level = notice with log_level = info
+      lineinfile:
+        path: /etc/kong/kong.conf
+        regexp: '^#log_level = notice'
+        line: 'log_level = info'
+        state: present
+
+    - name: Show differences between kong.conf and .kong.conf
+      command: diff /etc/kong/.kong.conf /etc/kong/kong.conf
+      register: kong_diff
+      failed_when: false  # Ignore non-zero return code
+
+    - name: Display differences
+      debug:
+        msg: "{{ kong_diff.stdout }}"
+
+
+
+    - name: Restart Kong with updated configuration
+      shell: |
+        kong restart -c /etc/kong/kong.conf
+      environment:
+        PATH: "/usr/local/bin:/usr/bin:/bin"  # Add the path to kong if necessary
+      args:
+        executable: /bin/bash
+      become: yes
+      become_user: root
+      register: kong_restart
+      ignore_errors: true
+      tags: 
+        - restart
+
+    - name: Debug Kong restart Output
+      debug:
+        msg: "Kong restart command output: {{ kong_restart.stdout | default('No output') }}"
+      when: kong_restart is defined
+      tags: 
+        - restart
+
+    - name: Display the target host
+      debug:
+        msg: "Adding plugin to host {{ inventory_hostname }} with IP {{ ansible_host | default(inventory_hostname) }}"
+
+    - name: Fetch the runtime host IP
+      set_fact:
+        runtime_ip: "{{ ansible_host | default(inventory_hostname) }}"
+
+    - name: Enable custom-log-plugin via admin API
+      shell: |
+        curl --location "http://{{ runtime_ip }}:{{ kong_admin_port }}/plugins" \
+        --header "Content-Type: application/json" \
+        --data '{
+          "name": "custom-log-plugin",
+          "config": {
+            "log_method": "POST",
+            "log_status_code": 401
+          },
+          "protocols": ["grpc", "grpcs", "http", "https"],
+          "enabled": true
+        }'
+
+    - name: Ensure the script is executable
+      file:
+        path: /etc/kong/aggregates/portal_aggregates.sh
+        mode: '0755'
+        state: file
+        owner: kong
+        group: kong
+
+    - name: Add cron job
+      cron:
+        name: "Run script at 59th minute of every hour"
+        minute: "59"
+        hour: "*"
+        user: kong
+        job: "/etc/kong/aggregates/portal_aggregates.sh"
