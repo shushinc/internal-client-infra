@@ -1,0 +1,92 @@
+---
+- name: Copy SQL file template to destination server
+  template:
+    src: zcs_new.sql 
+    dest: "{{ sql_file_path }}"
+    mode: '0644'
+    
+- name: Create MySQL database
+  mysql_db:
+    login_user: root
+    name: "{{ db_name_v1 }}"
+    state: present
+
+- name: Create MySQL user with access to the database
+  mysql_user:
+    login_user: root
+    name: "{{ db_user }}"
+    password: "{{ db_password }}"
+    priv: "{{ db_name_v1 }}.*:ALL"
+    state: present
+
+- name: Create admin MySQL user with access to the database
+  mysql_user:
+    login_user: root
+    name: "{{ db_admin_user }}"
+    password: "{{ db_admin_password }}"
+    priv: "{{ db_name_v1 }}.*:ALL"
+    state: present
+    
+
+- name: Copy tables from old database to new database
+  shell: |
+    mysqldump -u root '{{ db_name }}' | mysql -u root '{{ db_name_v1 }}'
+
+
+- name: Drop old database
+  mysql_db:
+    login_user: root
+    name: "{{ db_name }}"
+    state: absent
+
+
+- name: Create MySQL database
+  mysql_db:
+    login_user: root
+    name: "{{ db_name }}"
+    state: present
+
+- name: Create MySQL user with access to the database
+  mysql_user:
+    login_user: root
+    name: "{{ db_user }}"
+    password: "{{ db_password }}"
+    priv: "{{ db_name }}.*:ALL"
+    state: present
+
+- name: Create admin MySQL user with access to the database
+  mysql_user:
+    login_user: root
+    name: "{{ db_admin_user }}"
+    password: "{{ db_admin_password }}"
+    priv: "{{ db_name }}.*:ALL"
+    state: present
+    
+- name: Grant all privileges to 'devportal' from any host
+  mysql_user:
+    name: "{{ db_user }}"
+    host: "%"
+    password: "{{ db_password }}"
+    priv: "*.*:ALL"
+    state: present
+  vars:
+    db_user: devportal
+    db_password: pass
+
+- name: Grant all privileges to 'admin' from any host
+  mysql_user:
+    name: "{{ db_admin_user }}"
+    host: "%"
+    password: "{{ db_admin_password }}"
+    priv: "*.*:ALL"
+    state: present
+  vars:
+    db_admin_user: admin
+    db_admin_password: pass
+
+
+- name: Import SQL file into MySQL database
+  shell: >
+    mysql -u root {{ db_name }} < {{ sql_file_path }}
+  args:
+    chdir: /

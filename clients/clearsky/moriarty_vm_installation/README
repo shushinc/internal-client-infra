@@ -1,0 +1,76 @@
+## System requirements
+
+The control node must have Ansible 8.0+ (ansible-core 2.15+)
+
+All managed nodes in inventory must have:
+
+Passwordless SSH access
+Root access (or a user with equivalent permissions)
+
+## Usage
+
+1. Start by cloning the repository:
+```bash
+
+sudo su - ansible 
+git clone https://github.com/shushinc/moriaty_vm_installation.git
+cd moriaty_vm_installation
+git checkout ansible-code
+```
+2. Edit the inventory file to add the `ansible_user` you created during the prerequisites:
+```bash
+vim inventory.yml
+
+ansible_user: ansible
+```
+4. update Inventory file 
+
+```bash
+vi inventory.yml - update ips for dbs and runtime
+```
+
+4. update db ip  
+
+```bash
+vi roles/runtime/tasks/main.yml ( Line Number 122)
+```
+
+3. In the root directory, run the Ansible playbook to provision the cluster:
+
+```bash
+ansible-playbook playbook/sites.yaml -i inventory.yml --tags mysql
+ansible-playbook playbook/sites.yaml -i inventory.yml --tags moriarty
+```
+
+
+Verfication:
+Check devportal user is added to mysql  on the db server
+1.  mysql -u root
+2. SELECT user, host FROM mysql.user;
+3. SHOW DATABASES;
+
+
+Changes:
+Logo Change:
+1. Got to this page : admin/appearance/settings/shush
+2. Unselect : Use the logo supplied by the theme
+3. From UI - Upload logo and save 
+4. 2nd server : upload to the file 
+
+
+Kong Configuration:
+1. Go this path :admin/config/system/portal-settings
+2. Update  kong endpoint  :  For Ezmaple: http://34.72.223.216:8001
+	SAVE
+
+SMTP:
+1. Go this path : /admin/config/system/smtp
+2. Update SMTp
+3. SAVE
+
+Turn OFF CRON:
+1. Go this path : /admin/config/system/cron
+2. Make the option cron option  to never
+3. SAVE
+
+

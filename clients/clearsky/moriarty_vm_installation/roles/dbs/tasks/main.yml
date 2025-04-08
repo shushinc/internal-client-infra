@@ -1,0 +1,116 @@
+---
+- name: Update the package index on RHEL
+  dnf:
+    name: "*"
+    state: latest
+    update_cache: yes
+
+- name: Install PHP and extensions on RHEL
+  dnf:
+    name:
+      - php
+      - php-cli
+      - php-fpm
+      - php-gd
+      - php-mysqlnd
+      - php-mbstring
+      - php-json
+      - php-common
+      - php-dba
+      - php-dbg
+      - php-devel
+      - php-bcmath
+      - php-intl
+      - php-ldap
+      - php-opcache
+      - php-pear
+    state: present
+    update_cache: yes
+- name: Enable EPEL repository
+  dnf:
+    name: epel-release
+    state: present
+
+- name: Install Python 3
+  dnf:
+    name: python3
+    state: present
+
+- name: Install Python MySQL module
+  dnf:
+    name: python3-mysqlclient  # Change to the appropriate package if needed
+    state: present
+
+- name: Install pip for Python 3
+  dnf:
+    name: python3-pip
+    state: present
+
+- name: Install MySQL server
+  dnf:
+    name: mysql-server
+    state: present
+    update_cache: yes
+
+- name: Ensure MySQL service is enabled and running
+  service:
+    name: mysqld
+    state: started
+    enabled: yes
+
+- name: Copy SQL file template to destination server
+  template:
+    src: zcs_new.sql 
+    dest: "{{ sql_file_path }}"
+    mode: '0644'
+
+- name: Create MySQL database
+  mysql_db:
+    login_user: root
+    name: "{{ db_name }}"
+    state: present
+
+- name: Create MySQL user with access to the database
+  mysql_user:
+    login_user: root
+    name: "{{ db_user }}"
+    password: "{{ db_password }}"
+    priv: "{{ db_name }}.*:ALL"
+    state: present
+
+- name: Create admin MySQL user with access to the database
+  mysql_user:
+    login_user: root
+    name: "{{ db_admin_user }}"
+    password: "{{ db_admin_password }}"
+    priv: "{{ db_name }}.*:ALL"
+    state: present
+    
+- name: Grant all privileges to 'devportal' from any host
+  mysql_user:
+    name: "{{ db_user }}"
+    host: "%"
+    password: "{{ db_password }}"
+    priv: "*.*:ALL"
+    state: present
+  vars:
+    db_user: devportal
+    db_password: pass
+
+- name: Grant all privileges to 'admin' from any host
+  mysql_user:
+    name: "{{ db_admin_user }}"
+    host: "%"
+    password: "{{ db_admin_password }}"
+    priv: "*.*:ALL"
+    state: present
+  vars:
+    db_admin_user: admin
+    db_admin_password: pass
+
+
+- name: Import SQL file into MySQL database
+  shell: >
+    mysql -u root {{ db_name }} < {{ sql_file_path }}
+  args:
+    chdir: /

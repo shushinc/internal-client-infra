@@ -1,0 +1,10 @@
+[program:cloudsqlproxy]
+    command = /var/www/html/start-cloudsql.sh
+    stdout_logfile = stdout
+    stdout_logfile_maxbytes=0
+    stderr_logfile = stderr
+    stderr_logfile_maxbytes=0
+    user = root
+    autostart = true
+    autorestart = true
+    priority = 10

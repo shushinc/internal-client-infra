@@ -1,0 +1,12 @@
+---
+db_name_v2: "moriaty_v2"
+db_name_v1: "moriaty_v1"
+db_name: "moriaty"
+db_user: "devportal"
+db_password: "pass"  # Password for the admin user
+root_password: "pass"  # MySQL root password
+sql_file_path: "/tmp/zcs_new.sql"  # Path to the SQL file
+db_admin_user: "admin"
+db_admin_password: "pass"
+
+

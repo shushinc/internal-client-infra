@@ -1,0 +1,13 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@yourdomain.com
+    DocumentRoot /var/www/html/shushportal
+    ServerName yourdomain.com
+    ErrorLog /var/log/httpd/shushportal_error.log
+    CustomLog /var/log/httpd/shushportal_access.log combined
+
+    <Directory /var/www/html/shushportal>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
